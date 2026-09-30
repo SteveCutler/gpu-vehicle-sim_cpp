@@ -932,4 +932,5 @@ CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o: \
   /opt/homebrew/include/SFML/System/Sleep.hpp \
   /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/vehicleTypes.hpp \
   /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/vehicleBatch.hpp \
-  /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/environment.hpp
+  /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/environment.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream

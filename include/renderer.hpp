@@ -17,7 +17,7 @@ private:
 public:
     Renderer(std::size_t width, std::size_t height);
 
-    void draw(const vehicleBatch& vehicles);
+    bool draw(const vehicleBatch& vehicles);
     ~Renderer() = default;
 };
 

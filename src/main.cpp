@@ -52,9 +52,7 @@ int main(){
         Renderer renderer(width, height);
     #endif
 
-    
-    //main update loop
-    while(true){
+
 
         //run sim for steps amount of steps
         while(curr_step < steps){
@@ -83,19 +81,25 @@ int main(){
                
     
             }
-                    //optionally display data
+        //optionally display data
         #ifdef ENABLE_RENDERER
-
-            renderer.draw(vehicles);
-            
-            //check if window has been closed and end sim that way
-            // if(!window.isOpen()) break;
+            bool running = renderer.draw(vehicles);
+            if(!running) {
+                break;
+            }
         #endif
+
+
+        //increment step counter
+        curr_step++;
         }
 
-    }
+    // Keep showing the final state and handling window events.
+    #ifdef ENABLE_RENDERER
+    while (renderer.draw(vehicles)) {}
+    #endif
 
-    std::cout << "Sim complete : )" << std::endl;
+ 
 
     return 0;
 }

@@ -2,7 +2,7 @@
 #include <vector>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-
+#include <iostream>
 
 Renderer::Renderer(std::size_t width, std::size_t height):
 m_width(width),
@@ -14,13 +14,25 @@ m_window(sf::VideoMode({m_width, m_height}), "Vehicle Sim")
 {
     //Render logic initialization
     m_sprite.setScale(m_scale);
+    m_window.setFramerateLimit(60);
              //create window logic
 
     //TO DO 
     //display performance time here
 };
 
-void Renderer::draw(const vehicleBatch& vehicles){
+bool Renderer::draw(const vehicleBatch& vehicles){
+
+    //check if window has been closed:
+    while (auto event = m_window.pollEvent()) {
+        if (event->is<sf::Event::Closed>()) {
+            m_window.close();
+            std::cout << "window closed" << std::endl;
+        }
+    }
+
+    if (!m_window.isOpen()) return false;
+
     
     //vehicle count
     const std::size_t count = vehicles.getSize();
@@ -50,6 +62,10 @@ void Renderer::draw(const vehicleBatch& vehicles){
         m_window.draw(goalShape);
     }
     m_window.display();
+
+
+
+    return true;
 
 
 };
