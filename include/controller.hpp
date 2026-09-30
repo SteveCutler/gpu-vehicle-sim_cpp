@@ -2,8 +2,11 @@
 #include "vehicleBatch.hpp"
 #include "vehicleTypes.hpp"
 
-class controller
+class Controller
 {
-Action steer_controller(const VehicleState& vs);
+    public:
+        Controller();
+
+        Action steer_controller(const VehicleState& vs);
 };
 

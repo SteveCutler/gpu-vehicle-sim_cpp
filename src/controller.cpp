@@ -1,11 +1,15 @@
 #include "controller.hpp"
 
-Action controller::steer_controller(const VehicleState& vs){
+Controller::Controller(){
+
+};
+
+Action Controller::steer_controller(const VehicleState& vs){
 
     /*
     To Do 
     Controller math
     */
-   
-return Action{};
+
+return Action{0.f, 0.f};
 }
