@@ -17,12 +17,12 @@ int main(){
 
     std::cout << "starting up..." << std::endl;
     //master variables
-    constexpr std::size_t width = 256;
-    constexpr std::size_t height = 256;
+    constexpr std::size_t width = 500;
+    constexpr std::size_t height = 500;
     constexpr std::size_t N = 1;
 
     constexpr float dt = 0.02f;
-    constexpr std::size_t steps = 100;
+    constexpr std::size_t steps = 1000;
     std::size_t curr_step = 0;
 
     //initialize environment with 0 wind at first
@@ -47,7 +47,6 @@ int main(){
 
     //if rendering enabled create rendering logic
     #ifdef ENABLE_RENDERER
-         std::cout << "test renderer" << std::endl;
         //create renderer
         Renderer renderer(width, height);
     #endif
@@ -63,7 +62,7 @@ int main(){
                 vs = vehicles.load(x);
     
                 //pass to controller 
-                /*
+                
                 // must write controller logic still
                 action = controller.steer_controller(vs);
 
@@ -73,12 +72,6 @@ int main(){
                 //update old state
                 vehicles.set(x, newState);
 
-                */
-
-
-
-
-               
     
             }
         //optionally display data
