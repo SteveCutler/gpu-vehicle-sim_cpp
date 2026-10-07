@@ -5,8 +5,8 @@ class environment
 {
 public: 
 
-std::size_t width;
-std::size_t height;
+std::size_t m_width;
+std::size_t m_height;
 
 private:
 std::vector<float> velFieldx, velFieldy;

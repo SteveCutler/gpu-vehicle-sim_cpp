@@ -15,8 +15,8 @@ vehicleBatch::vehicleBatch(std::size_t N, environment env):
 
     for(int x = 0; x < N; x++){
         //intializing a single vehicle with basic parameters for verification
-        m_x[x] = env.width*0.5f;
-        m_y[x] = env.height*0.9f;
+        m_x[x] = env.m_width*0.5f;
+        m_y[x] = env.m_height*0.9f;
 
         m_vx[x] = 0.f;
         m_vy[x] = 0.f;
@@ -24,8 +24,8 @@ vehicleBatch::vehicleBatch(std::size_t N, environment env):
         m_heading[x] = 0.f;
         m_turnRate[x] = 0.f;
 
-        m_goalx[x] = env.width*.5;
-        m_goaly[x] = env.height*.1;
+        m_goalx[x] = env.m_width*.5;
+        m_goaly[x] = env.m_height*.1;
         
     }
 

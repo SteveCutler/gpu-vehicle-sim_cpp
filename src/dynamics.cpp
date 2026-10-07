@@ -1,4 +1,5 @@
 #include "dynamics.hpp"
+#include <cmath>
 
 Dynamics::Dynamics(){
 
@@ -9,7 +10,7 @@ VehicleState Dynamics::step_update(const VehicleState& vs, const Action& action,
     //initial params
     constexpr float mass = 1.0f;
     constexpr float momentOfInertia = 1.0f;
-    constexpr float linearDrag = 0.8f;
+    constexpr float linearDrag = 0.2f;
     constexpr float turnDrag = 0.35f;
     constexpr float pi = 3.14159265359f;
 

@@ -9,7 +9,7 @@ add_executable(vehicle_sim
     src/environment.cpp
     src/dynamics.cpp
     src/controller.cpp
-    src/renderer.cpp
+
 )
 
 target_include_directories(vehicle_sim PRIVATE
