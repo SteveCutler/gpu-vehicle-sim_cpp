@@ -85,12 +85,12 @@ clean: CMakeFiles/vehicle_sim.dir/clean
 CMakeFiles/vehicle_sim.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build-render/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target vehicle_sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build-render/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target vehicle_sim"
 .PHONY : CMakeFiles/vehicle_sim.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/vehicle_sim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build-render/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build-render/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/vehicle_sim.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build-render/CMakeFiles 0
 .PHONY : CMakeFiles/vehicle_sim.dir/rule
@@ -102,7 +102,7 @@ vehicle_sim: CMakeFiles/vehicle_sim.dir/rule
 # codegen rule for target.
 CMakeFiles/vehicle_sim.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build-render/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target vehicle_sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build-render/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target vehicle_sim"
 .PHONY : CMakeFiles/vehicle_sim.dir/codegen
 
 # clean rule for target.

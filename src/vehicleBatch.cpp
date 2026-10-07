@@ -1,4 +1,5 @@
 #include "vehicleBatch.hpp"
+#include <random>
 
 
 vehicleBatch::vehicleBatch(std::size_t N, environment env):
@@ -13,19 +14,34 @@ vehicleBatch::vehicleBatch(std::size_t N, environment env):
     m_size(N)
 {
 
+    //RNG setup 
+    std::mt19937 rng(25);
+
+    constexpr float margin = 10.f;
+    constexpr float pi = 3.14159265359f;
+
+    std::uniform_real_distribution<float> randomX(
+        margin, static_cast<float>(env.m_width) - margin);
+
+    std::uniform_real_distribution<float> randomY(
+        margin, static_cast<float>(env.m_height) - margin);
+
+    std::uniform_real_distribution<float> randomHeading(-pi, pi);
+
+
     for(int x = 0; x < N; x++){
         //intializing a single vehicle with basic parameters for verification
-        m_x[x] = env.m_width*0.5f;
-        m_y[x] = env.m_height*0.9f;
+        m_x[x] = randomX(rng);
+        m_y[x] = randomY(rng);
 
         m_vx[x] = 0.f;
         m_vy[x] = 0.f;
 
-        m_heading[x] = 0.f;
+        m_heading[x] = randomHeading(rng);
         m_turnRate[x] = 0.f;
 
-        m_goalx[x] = env.m_width*.5;
-        m_goaly[x] = env.m_height*.1;
+        m_goalx[x] = randomX(rng);
+        m_goaly[x] = randomY(rng);
         
     }
 

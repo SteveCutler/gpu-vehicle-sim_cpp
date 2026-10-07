@@ -225,30 +225,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/renderer.o: src/renderer.cpp.o
-.PHONY : src/renderer.o
-
-# target to build an object file
-src/renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o
-.PHONY : src/renderer.cpp.o
-
-src/renderer.i: src/renderer.cpp.i
-.PHONY : src/renderer.i
-
-# target to preprocess a source file
-src/renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/renderer.cpp.i
-.PHONY : src/renderer.cpp.i
-
-src/renderer.s: src/renderer.cpp.s
-.PHONY : src/renderer.s
-
-# target to generate assembly for a file
-src/renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/renderer.cpp.s
-.PHONY : src/renderer.cpp.s
-
 src/vehicleBatch.o: src/vehicleBatch.cpp.o
 .PHONY : src/vehicleBatch.o
 
@@ -294,9 +270,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/renderer.o"
-	@echo "... src/renderer.i"
-	@echo "... src/renderer.s"
 	@echo "... src/vehicleBatch.o"
 	@echo "... src/vehicleBatch.i"
 	@echo "... src/vehicleBatch.s"
