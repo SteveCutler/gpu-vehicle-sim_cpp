@@ -44,11 +44,6 @@ int main(int argNum, char* argVals[]){
     //initialize vehicleState data
     vehicleBatch vehicles(N, env);
     
-    //output file name for correctness comparison
-    if (argNum > 3) {
-        exportStates(vehicles, argVals[3]);
-    }
-    
     //create controller object
     Controller controller;
 
@@ -122,7 +117,11 @@ int main(int argNum, char* argVals[]){
         std::cout << "Execution time: " << seconds << " seconds\n";
         std::cout << "Vehicle updates/sec: " << updates / seconds << '\n';
 
-
+            //output file name for correctness comparison
+            if (argNum > 3) {
+                exportStates(vehicles, argVals[3]);
+            }
+            
 
     // Keep showing the final state and handling window events.
     #ifdef ENABLE_RENDERER
