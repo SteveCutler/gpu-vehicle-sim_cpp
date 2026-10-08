@@ -14,17 +14,25 @@
 
 using Clock = std::chrono::steady_clock;
 
-int main(){
+int main(int argNum, char* argVals[]){
 
 
     std::cout << "starting up..." << std::endl;
     //master variables
     constexpr std::size_t width = 500;
     constexpr std::size_t height = 500;
-    constexpr std::size_t N = 5;
-
     constexpr float dt = 0.02f;
-    constexpr std::size_t steps = 1000;
+
+    //default values
+    std::size_t N = 5;
+    std::size_t steps = 1000;
+
+    //take in input variables
+    if (argNum > 1) N = std::stoi(argVals[1]);
+    if (argNum > 2) steps = std::stoi(argVals[2]);
+
+    std::cout << "Vehicles: " << N << "\nSteps: " << steps << '\n';
+
     std::size_t curr_step = 0;
 
     //initialize environment with 0 wind at first
