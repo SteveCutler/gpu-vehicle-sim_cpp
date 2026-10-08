@@ -1,15 +1,14 @@
 #pragma once
 #include "vehicleTypes.hpp"
 #include "environment.hpp"
-#include <cuda_runtime.h>
 
 
 class Dynamics
 {
 
 public:
-    __device__ Dynamics() = default;
+    Dynamics();
 
-   __device__ VehicleState step_update(const VehicleState& vs, const Action& action, const environment& env, const float dt);
+    VehicleState step_update(const VehicleState& vs, const Action& action, const environment& env, const float dt);
 };
 

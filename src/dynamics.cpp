@@ -1,9 +1,9 @@
 #include "dynamics.hpp"
 #include <cmath>
-#include <cuda_runtime.h>
 
+Dynamics::Dynamics(){
 
-Dynamics::Dynamics(){};
+};
 
 VehicleState Dynamics::step_update(const VehicleState& vs, const Action& action, const environment& env, const float dt){
 
@@ -15,15 +15,15 @@ VehicleState Dynamics::step_update(const VehicleState& vs, const Action& action,
     constexpr float pi = 3.14159265359f;
 
     //retrieve wind disturbance at this position
-    const float2 current = env.getDisturbance(vs.x, vs.y);
+    const std::pair<float,float> current = env.getDisturbance(vs.x, vs.y);
 
     //Forces in x y coords
     const float thrustX = action.thrust * std::cos(vs.heading);
     const float thrustY = action.thrust * std::sin(vs.heading);
 
     //current is 0 for this first implementation
-    const float relativeVx = vs.vx - current.x;
-    const float relativeVy = vs.vy - current.y;
+    const float relativeVx = vs.vx - current.first;
+    const float relativeVy = vs.vy - current.second;
 
     //accel x and y
     const float ax = (thrustX - linearDrag * relativeVx) / mass;

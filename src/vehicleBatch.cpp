@@ -2,7 +2,7 @@
 #include <random>
 
 
-vehicleBatch::vehicleBatch(std::size_t N, std::size_t width, std::size_t height):
+vehicleBatch::vehicleBatch(std::size_t N, environment env):
     m_x(N),
     m_y(N),
     m_vx(N),
@@ -21,10 +21,10 @@ vehicleBatch::vehicleBatch(std::size_t N, std::size_t width, std::size_t height)
     constexpr float pi = 3.14159265359f;
 
     std::uniform_real_distribution<float> randomX(
-        margin, static_cast<float>(width) - margin);
+        margin, static_cast<float>(env.m_width) - margin);
 
     std::uniform_real_distribution<float> randomY(
-        margin, static_cast<float>(height) - margin);
+        margin, static_cast<float>(env.m_height) - margin);
 
     std::uniform_real_distribution<float> randomHeading(-pi, pi);
 

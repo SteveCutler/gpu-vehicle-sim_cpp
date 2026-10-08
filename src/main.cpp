@@ -5,8 +5,12 @@
 #include "dynamics.hpp"
 #include <chrono>
 #include <iostream>
-#include "CudaSimulation.cu"
 
+#ifdef ENABLE_RENDERER
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include "renderer.hpp"
+#endif
 
 using Clock = std::chrono::steady_clock;
 
@@ -20,38 +24,96 @@ int main(){
     constexpr std::size_t N = 5;
 
     constexpr float dt = 0.02f;
+    constexpr std::size_t steps = 1000;
+    std::size_t curr_step = 0;
+
+    //initialize environment with 0 wind at first
+    environment env(width, height);
 
     //initialize vehicleState data
-    vehicleBatch vehicles(N, width, height);
+    vehicleBatch vehicles(N, env);
 
-    //start wallclock timer for performance measurement
-    const auto start = Clock::now();
+    //create controller object
+    Controller controller;
 
-    //launch Cuda Kernel operations
-    try{
-        runCudaSimulation(vehicles, N, dt);
-    }
-    catch(const std::exception& error){
-        throw std::runtime_error(cudaGetErrorString(error));
-        return 1;
-    }
+    //create dynamics updater
+    Dynamics dynamics;
 
-    //end clock
-    const auto stop = Clock::now();
+    //allocating variables outside hot loop
+    VehicleState vs;
+    Action action;
+    VehicleState newState;
 
-    //calculate elapsed time
-    const double seconds = 
-        std::chrono::duration<double>(stop - start).count();
+    // create a clock to track the elapsed time
+    // TO DO create performance clock
 
-    //multiply steps by vehicles to get total updates
-    const double updates = static_cast<double>(N) * curr_step;
-
-    std::cout << "Vehicles: " << N << '\n';
-    std::cout << "Completed steps: " << curr_step << '\n';
-    std::cout << "Execution time: " << seconds << " seconds\n";
-    std::cout << "Vehicle updates/sec: " << updates / seconds << '\n';
+    //if rendering enabled create rendering logic
+    #ifdef ENABLE_RENDERER
+        //create renderer
+        Renderer renderer(width, height);
+    #endif
 
 
+        //start wallclock timer for performance measurement
+        const auto start = Clock::now();
+
+        //run sim for steps amount of steps
+        while(curr_step < steps){
+
+            //loop over every vehicle every step
+            for(int x = 0; x < N; x++){
+                //load vehicle state
+                vs = vehicles.load(x);
+    
+                //pass to controller 
+                
+                // must write controller logic still
+                action = controller.steer_controller(vs);
+
+                //calculate new state
+                newState = dynamics.step_update(vs, action, env, dt);
+
+                //update old state
+                vehicles.set(x, newState);
+
+    
+            }
+        //optionally display data
+        #ifdef ENABLE_RENDERER
+            bool running = renderer.draw(vehicles);
+            if(!running) {
+                break;
+            }
+        #endif
+
+
+        //increment step counter
+        curr_step++;
+        }
+
+        //end clock
+        const auto stop = Clock::now();
+
+        //calculate elapsed time
+        const double seconds = 
+            std::chrono::duration<double>(stop - start).count();
+
+        //multiply steps by vehicles to get total updates
+        const double updates = static_cast<double>(N) * curr_step;
+
+        std::cout << "Vehicles: " << N << '\n';
+        std::cout << "Completed steps: " << curr_step << '\n';
+        std::cout << "Execution time: " << seconds << " seconds\n";
+        std::cout << "Vehicle updates/sec: " << updates / seconds << '\n';
+
+
+
+    // Keep showing the final state and handling window events.
+    #ifdef ENABLE_RENDERER
+    while (renderer.draw(vehicles)) {}
+    #endif
+
+ 
 
     return 0;
 }

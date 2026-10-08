@@ -1,13 +1,12 @@
 #pragma once
 #include "vehicleBatch.hpp"
 #include "vehicleTypes.hpp"
-#include <cuda_runtime.h>
 
 class Controller
 {
     public:
-        __device__ Controller() = default;
+        Controller();
 
-        __device__ Action steer_controller(const VehicleState& vs);
+        Action steer_controller(const VehicleState& vs);
 };
 
