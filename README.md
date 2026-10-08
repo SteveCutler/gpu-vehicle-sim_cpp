@@ -6,3 +6,4 @@ TO DO:
 -shrink vehicle size
 -implement some measurment of error mechanism to compare GPU version against
 -create a CPU benchmark
+-introduce more comprehensive and robust error handling with cleanup

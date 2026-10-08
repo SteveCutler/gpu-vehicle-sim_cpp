@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <cuda_runtime.h>
 
 class environment
 {
@@ -9,12 +10,13 @@ std::size_t m_width;
 std::size_t m_height;
 
 private:
-std::vector<float> velFieldx, velFieldy;
+float* velFieldx;
+float* velFieldy;
 
 public:
 environment(std::size_t w, std::size_t h);
 
-std::pair<float,float> getDisturbance(std::size_t x, std::size_t y, float dt) const;
+__device__ float2 getDisturbance(std::size_t x, std::size_t y, float dt) const;
 
 };
 

@@ -60,13 +60,15 @@ __global__ void update(float* vs_x, float* vs_y, float* vs_vx, float* vs_vy, flo
     return;
 }
 
-void runCudaSimulation(vehicleBatch& vehicles, const environment& env, std::size_t N, float dt){
+void runCudaSimulation(vehicleBatch& vehicles, std::size_t N, float dt){
 
     std::size_t curr_step = 0;
 
     constexpr std::size_t steps = 1000;
 
     const std::size_t floatBytes = N * sizeof(float);
+
+    //create GPU environment struct
     
     //creating devices for vehicle batch data, allocating memory and copying data over
     float* vs_x = nullptr;
