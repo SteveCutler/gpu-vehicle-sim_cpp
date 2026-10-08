@@ -12,7 +12,7 @@ velFieldy(w*h,0.0f){
 
 }
 
-std::pair<float,float> environment::getDisturbance(std::size_t x, std::size_t y) const{
+std::pair<float,float> environment::getDisturbance(std::size_t x, std::size_t y, float dt) const{
     {
         // bounds check
     if(x < 0 || x >= m_width || y < 0 || y >= m_height){
@@ -20,6 +20,7 @@ std::pair<float,float> environment::getDisturbance(std::size_t x, std::size_t y)
     }
 
     std::size_t pos = y * m_width + x;
+    //update velocity fields with dt
     return {velFieldx[pos], velFieldy[pos]};
 
 }

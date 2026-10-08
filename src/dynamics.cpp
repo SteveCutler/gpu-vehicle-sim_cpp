@@ -1,9 +1,7 @@
 #include "dynamics.hpp"
 #include <cmath>
 
-Dynamics::Dynamics(){
-
-};
+Dynamics::Dynamics(){};
 
 VehicleState Dynamics::step_update(const VehicleState& vs, const Action& action, const environment& env, const float dt){
 

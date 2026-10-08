@@ -2,9 +2,8 @@
 #include <cmath>
 #include <algorithm>
 
-Controller::Controller(){
 
-};
+Controller::Controller(){};
 
 Action Controller::steer_controller(const VehicleState& vs){
 

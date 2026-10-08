@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
-project(gpu_vehicle_sim LANGUAGES CXX)
+project(gpu_vehicle_sim LANGUAGES CXX CUDA)
 
-option(ENABLE_RENDERER "Build the SFML renderer" ON)
+option(ENABLE_RENDERER "Build the SFML renderer" OFF)
 
 add_executable(vehicle_sim
     src/main.cpp
@@ -9,6 +9,7 @@ add_executable(vehicle_sim
     src/environment.cpp
     src/dynamics.cpp
     src/controller.cpp
+    src/CudaSimulation.cu
 
 )
 
