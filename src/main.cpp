@@ -29,6 +29,10 @@ int main(int argNum, char* argVals[]){
     std::size_t steps = 1000;
 
     //take in input variables
+    //set vehicle batch size
+    if (argNum > 1) N = std::stoi(argVals[1]);
+    //set step size
+    if (argNum > 2) steps = std::stoi(argVals[2]);
     
     std::cout << "Vehicles: " << N << "\nSteps: " << steps << '\n';
     
@@ -40,10 +44,6 @@ int main(int argNum, char* argVals[]){
     //initialize vehicleState data
     vehicleBatch vehicles(N, env);
     
-    //set vehicle batch size
-    if (argNum > 1) N = std::stoi(argVals[1]);
-    //set step size
-    if (argNum > 2) steps = std::stoi(argVals[2]);
     //output file name for correctness comparison
     if (argNum > 3) {
         exportStates(vehicles, argVals[3]);
