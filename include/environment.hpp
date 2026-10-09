@@ -14,7 +14,7 @@ std::vector<float> velFieldx, velFieldy;
 public:
 environment(std::size_t w, std::size_t h);
 
-std::pair<float,float> getDisturbance(std::size_t x, std::size_t y) const;
+std::pair<float,float> getDisturbance(std::size_t x, std::size_t y, float time) const;
 
 };
 

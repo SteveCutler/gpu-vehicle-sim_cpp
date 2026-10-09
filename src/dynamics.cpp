@@ -5,7 +5,7 @@ Dynamics::Dynamics(){
 
 };
 
-VehicleState Dynamics::step_update(const VehicleState& vs, const Action& action, const environment& env, const float dt){
+VehicleState Dynamics::step_update(const VehicleState& vs, const Action& action, const environment& env, const float dt, std::size_t steps){
 
     //initial params
     constexpr float mass = 1.0f;
@@ -15,7 +15,7 @@ VehicleState Dynamics::step_update(const VehicleState& vs, const Action& action,
     constexpr float pi = 3.14159265359f;
 
     //retrieve wind disturbance at this position
-    const std::pair<float,float> current = env.getDisturbance(vs.x, vs.y);
+    const std::pair<float,float> current = env.getDisturbance(vs.x, vs.y, dt*steps);
 
     //Forces in x y coords
     const float thrustX = action.thrust * std::cos(vs.heading);

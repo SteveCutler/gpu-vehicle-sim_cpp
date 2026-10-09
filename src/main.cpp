@@ -23,6 +23,7 @@ int main(int argNum, char* argVals[]){
     constexpr std::size_t width = 500;
     constexpr std::size_t height = 500;
     constexpr float dt = 0.02f;
+    constexpr bool arrow_viz = true;
 
     //default values
     std::size_t N = 5;
@@ -61,7 +62,7 @@ int main(int argNum, char* argVals[]){
     //if rendering enabled create rendering logic
     #ifdef ENABLE_RENDERER
         //create renderer
-        Renderer renderer(width, height);
+        Renderer renderer(width, height, arrow_viz);
     #endif
 
 
@@ -82,7 +83,7 @@ int main(int argNum, char* argVals[]){
                 action = controller.steer_controller(vs);
 
                 //calculate new state
-                newState = dynamics.step_update(vs, action, env, dt);
+                newState = dynamics.step_update(vs, action, env, dt, curr_step);
 
                 //update old state
                 vehicles.set(x, newState);
@@ -91,7 +92,7 @@ int main(int argNum, char* argVals[]){
             }
         //optionally display data
         #ifdef ENABLE_RENDERER
-            bool running = renderer.draw(vehicles);
+            bool running = renderer.draw(vehicles, dt, curr_step, env);
             if(!running) {
                 break;
             }
@@ -125,7 +126,7 @@ int main(int argNum, char* argVals[]){
 
     // Keep showing the final state and handling window events.
     #ifdef ENABLE_RENDERER
-    while (renderer.draw(vehicles)) {}
+    while (renderer.draw(vehicles, dt, curr_step, env)) {}
     #endif
 
  
