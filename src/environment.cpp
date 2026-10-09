@@ -13,10 +13,10 @@ velFieldy(w*h,0.0f){
 
 }
 
-std::pair<float,float> environment::getDisturbance(std::size_t x, std::size_t y, float time) const{
+std::pair<float,float> environment::getDisturbance(float x, float y, float time) const{
     {
         // bounds check
-    if(x < 0 || x >= m_width || y < 0 || y >= m_height){
+    if(x < 0.f || x >= static_cast<float>(m_width) || y < 0.f || y >= static_cast<float>(m_height)){
         return {0.0f, 0.0f};
     }
 
