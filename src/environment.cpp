@@ -35,7 +35,7 @@ std::pair<float,float> environment::getDisturbance(std::size_t x, std::size_t y,
     float x_gust = std::sin(x_angle);
 
     float y_angle = (y_evolve / wavelength) * twopi;
-    float y_gust = std::sin(y_angle);
+    float y_gust = std::cos(y_angle);
 
     float windX = amplitude * x_gust;
     float windY = amplitude * y_gust;
