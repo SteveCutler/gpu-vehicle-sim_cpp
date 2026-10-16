@@ -1,7 +1,10 @@
 2D Vehicle Simulator — C++ Reference
 A C++17 simulation of independent, goal seeking vehicles moving through a time varying disturbance field. This repo provides the serial CPU reference for a companion CUDA implementation, with final state CSV export for numerical comparisons and an optional SFML visualization.
 Built to explore the numerical and systems foundations of parallel simulation: feedback control, time integration, data layout, and reproducible CPU/GPU comparisons.
-CUDA implementation · Experiment notebook
+[CUDA implementation]([https://github.com](https://github.com/SteveCutler/gpu-vehicle-sim_cuda)) · [Experiment notebook]([https://github.com](https://colab.research.google.com/drive/1Oha_W-K_uN2omVKECxBUDF-z6V5Aaw0-?usp=sharing))
+
+<img width="494" height="481" alt="VehicleSimulator_screencap" src="https://github.com/user-attachments/assets/96536042-a8ff-4cc0-84b0-b185f01b5ef5" />
+
 
 
 What it does
