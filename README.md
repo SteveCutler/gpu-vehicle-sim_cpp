@@ -2,7 +2,7 @@
 A C++17 simulation of independent, goal seeking vehicles moving through a time varying disturbance field. This repo provides the serial CPU reference for a companion CUDA implementation, with final state CSV export for numerical comparisons and an optional SFML visualization.
 Built to explore the numerical and systems foundations of parallel simulation: feedback control, time integration, data layout, and reproducible CPU/GPU comparisons.
 CUDA implementation · Experiment notebook
-///
+
 
 What it does
 - Simulates position, velocity, heading, and angular velocity for each vehicle.
@@ -12,7 +12,7 @@ What it does
 - Stores vehicle components in separate contiguous arrays.
 - Initializes positions, headings, and goals with a fixed random seed.
 - Reports elapsed time and vehicle updates per second, and optionally exports final states to CSV.
-- 
+
 Vehicles are independent: they do not collide or influence one another. This makes the model useful for studying parallel rollouts, while keeping the CPU implementation easy to inspect.
 Build and run
 Headless build
