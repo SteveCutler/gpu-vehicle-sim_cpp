@@ -8,6 +8,7 @@
 #include "stateExport.hpp"
 #include "DriftItem.hpp"
 #include "DriftDynamics.hpp"
+#include "ProbabilityMap.hpp"
 
 #ifdef ENABLE_RENDERER
 #include <SFML/Window.hpp>
@@ -63,6 +64,10 @@ int main(int argNum, char* argVals[]){
     target.x = static_cast<float>(width/2.0f);
     target.y = static_cast<float>(height*0.8f);
 
+    //init Probability Map
+    float prob_rad = 50.f;
+    ProbabilityMap p_map(driftDynamics, width, height, 10, target.x, target.y, prob_rad);
+
 
     //allocating variables outside hot loop
     VehicleState vs;
@@ -107,9 +112,12 @@ int main(int argNum, char* argVals[]){
             //update target location
             driftDynamics.DriftUpdate(target, env.getDisturbance(target.x, target.y, 0.0f), dt);
 
+            //update probability particles
+            p_map.update(env, dt);
+
         //optionally display data
         #ifdef ENABLE_RENDERER
-            bool running = renderer.draw(vehicles, dt, curr_step, env, target);
+            bool running = renderer.draw(vehicles, dt, curr_step, env, target, p_map);
             if(!running) {
                 break;
             }
@@ -143,7 +151,7 @@ int main(int argNum, char* argVals[]){
 
     // Keep showing the final state and handling window events.
     #ifdef ENABLE_RENDERER
-    while (renderer.draw(vehicles, dt, curr_step, env, target)) {}
+    while (renderer.draw(vehicles, dt, curr_step, env, target, p_map)) {}
     #endif
 
  

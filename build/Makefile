@@ -153,6 +153,30 @@ src/DriftDynamics.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.s
 .PHONY : src/DriftDynamics.cpp.s
 
+src/ProbabilityMap.o: src/ProbabilityMap.cpp.o
+.PHONY : src/ProbabilityMap.o
+
+# target to build an object file
+src/ProbabilityMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o
+.PHONY : src/ProbabilityMap.cpp.o
+
+src/ProbabilityMap.i: src/ProbabilityMap.cpp.i
+.PHONY : src/ProbabilityMap.i
+
+# target to preprocess a source file
+src/ProbabilityMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.i
+.PHONY : src/ProbabilityMap.cpp.i
+
+src/ProbabilityMap.s: src/ProbabilityMap.cpp.s
+.PHONY : src/ProbabilityMap.s
+
+# target to generate assembly for a file
+src/ProbabilityMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.s
+.PHONY : src/ProbabilityMap.cpp.s
+
 src/controller.o: src/controller.cpp.o
 .PHONY : src/controller.o
 
@@ -309,6 +333,9 @@ help:
 	@echo "... src/DriftDynamics.o"
 	@echo "... src/DriftDynamics.i"
 	@echo "... src/DriftDynamics.s"
+	@echo "... src/ProbabilityMap.o"
+	@echo "... src/ProbabilityMap.i"
+	@echo "... src/ProbabilityMap.s"
 	@echo "... src/controller.o"
 	@echo "... src/controller.i"
 	@echo "... src/controller.s"

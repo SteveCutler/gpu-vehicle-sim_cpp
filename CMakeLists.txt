@@ -10,7 +10,7 @@ add_executable(vehicle_sim
     src/dynamics.cpp
     src/controller.cpp
     src/DriftDynamics.cpp
-
+    src/ProbabilityMap.cpp
 )
 
 target_include_directories(vehicle_sim PRIVATE

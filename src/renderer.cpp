@@ -5,6 +5,7 @@
 #include <iostream>
 #include "environment.hpp"
 #include "DriftItem.hpp"
+#include "ProbabilityMap.hpp"
 
 Renderer::Renderer(std::size_t width, std::size_t height, bool arrow_viz):
 m_width(width),
@@ -25,7 +26,7 @@ m_window(sf::VideoMode({m_width, m_height}), "Search&Rescue Sim")
     //display performance time here
 };
 
-bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env, DriftItem& target){
+bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env, const DriftItem& target, const ProbabilityMap& p_map){
 
     //check if window has been closed:
     while (auto event = m_window.pollEvent()) {
@@ -49,9 +50,9 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     vehicleShape.setFillColor(sf::Color::Cyan);
 
     //create goal shape
-    sf::CircleShape goalShape(4.f);
-    goalShape.setOrigin({4.f, 4.f});
-    goalShape.setFillColor(sf::Color::Green);
+    sf::CircleShape particleShape(2.f);
+    particleShape.setOrigin({4.f, 4.f});
+    particleShape.setFillColor(sf::Color::Green);
 
     //create target shape
     sf::ConvexShape targetShape(10);
@@ -111,13 +112,16 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         vehicleShape.setPosition({s.x, m_height - s.y});
         vehicleShape.setRotation(sf::radians(-s.heading));
         m_window.draw(vehicleShape);
-
-        goalShape.setPosition({s.goalx, m_height - s.goaly});
-        m_window.draw(goalShape);
     }
     //render arrows
     if(m_arrow_viz){
         m_window.draw(m_arrows);
+    }
+
+    //drawing probability particles
+    for(size_t p = 0; p < p_map.num_p_; p++){
+        particleShape.setPosition({p_map.particles_[p].pos.x, p_map.particles_[p].pos.y});
+        m_window.draw(particleShape);
     }
     
     //draw target

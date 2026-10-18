@@ -22,7 +22,7 @@ std::pair<float,float> environment::getDisturbance(float x, float y, float time)
 
     //cyclical wind field parameters
     constexpr float amplitude = 5.5f;
-    constexpr float wavelength = 1000.f;
+    constexpr float wavelength = 500.f;
     constexpr float timeMult = 0.f;
     constexpr float twopi = 6.283185f;
 
