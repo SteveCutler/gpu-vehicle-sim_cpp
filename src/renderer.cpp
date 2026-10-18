@@ -7,7 +7,7 @@
 #include "DriftItem.hpp"
 #include "ProbabilityMap.hpp"
 
-Renderer::Renderer(std::size_t width, std::size_t height, bool arrow_viz):
+Renderer::Renderer(std::size_t width, std::size_t height, bool arrow_viz, std::size_t cell_size):
 m_width(width),
 m_height(height),
 m_texture(sf::Vector2u(width, height)),
@@ -15,6 +15,7 @@ m_scale(sf::Vector2f(1.0f, 1.0f)),
 m_sprite(m_texture),
 m_arrow_viz(arrow_viz),
 m_arrows(sf::PrimitiveType::Lines, width/16 * height/16 * 6),
+m_p_grid(sf::PrimitiveType::Triangles, width/cell_size * height/cell_size * 6),
 m_window(sf::VideoMode({m_width, m_height}), "Search&Rescue Sim")
 {
     //Render logic initialization
@@ -24,6 +25,31 @@ m_window(sf::VideoMode({m_width, m_height}), "Search&Rescue Sim")
 
     //TO DO 
     //display performance time here
+
+    //initialize probabilty map triangle grid
+
+    std::size_t cols = std::floor(width / cell_size);
+    std::size_t rows = std::floor(height / cell_size);
+
+    for (int row = 0; row < rows; row++) {
+        for (int col = 0; col < cols; col++) {
+            int i = (row * cols + col) * 6;
+
+            float x = col * cell_size;
+            float y = row * cell_size;
+
+            // First triangle
+            m_p_grid[i + 0].position = {x, y};
+            m_p_grid[i + 1].position = {x + cell_size, y};
+            m_p_grid[i + 2].position = {x, y + cell_size};
+
+            // Second triangle
+            m_p_grid[i + 3].position = {x + cell_size, y};
+            m_p_grid[i + 4].position = {x + cell_size, y + cell_size};
+            m_p_grid[i + 5].position = {x, y + cell_size};
+        }
+    }
+
 };
 
 bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env, const DriftItem& target, const ProbabilityMap& p_map){
@@ -113,10 +139,43 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         vehicleShape.setRotation(sf::radians(-s.heading));
         m_window.draw(vehicleShape);
     }
+    
+    //clear probability grid to black
+    for(std::size_t i = 0; i < m_p_grid.getVertexCount(); i++){
+        m_p_grid[i].color = sf::Color::Black;
+    }
+
+    
+    if(!p_map.occupied_cells.empty()){
+        for(std::size_t i = 0; i < p_map.occupied_cells.size(); i++){
+            //cell with particles in it
+            std::size_t cell_num = p_map.occupied_cells[i];
+            
+            float intensity = p_map.map_[cell_num] * 255.0;
+            
+            std::size_t start_vert = cell_num * 6;
+            
+            m_p_grid[start_vert + 0].color = sf::Color(0, intensity, 0);
+            m_p_grid[start_vert + 1].color = sf::Color(0, intensity, 0);
+            m_p_grid[start_vert + 2].color = sf::Color(0, intensity, 0);
+            
+            // Second triangle
+            m_p_grid[start_vert + 3].color = sf::Color(0, intensity, 0);
+            m_p_grid[start_vert + 4].color = sf::Color(0, intensity, 0);
+            m_p_grid[start_vert + 5].color = sf::Color(0, intensity, 0);
+        }
+        
+    }
+    //draw probability map
+    m_window.draw(m_p_grid);
+    
+    
     //render arrows
     if(m_arrow_viz){
         m_window.draw(m_arrows);
     }
+
+    
 
     //drawing probability particles
     for(size_t p = 0; p < p_map.num_p_; p++){

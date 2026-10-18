@@ -4,17 +4,17 @@
 #include <algorithm>
 #include "DriftDynamics.hpp"
 
-ProbabilityMap::ProbabilityMap(DriftDynamics& DD, ::size_t width, std::size_t height, std::size_t num_p, float est_x, float est_y, float p_rad):
+ProbabilityMap::ProbabilityMap(DriftDynamics& DD, ::size_t width, std::size_t height, std::size_t num_p, float est_x, float est_y, float p_rad, std::size_t cell_size):
 width_(width),
 height_(height),
 num_p_(num_p),
-map_(width*height, 0.f),
+cell_size_(cell_size),
+map_((width/cell_size_) * (height/cell_size_), 0.f),
 DD_(DD)
 {
     //reserve space for probability particles
     particles_.reserve(num_p_);
 
-    
 
     //RNG setup 
     std::mt19937 rng(25);
@@ -48,4 +48,35 @@ void ProbabilityMap::update(const environment& env, float dt){
         DD_.DriftUpdate(p.pos, env.getDisturbance(p.pos.x, p.pos.y, 0.f), dt);
     }
 
+};
+
+void ProbabilityMap::computeProb(){
+    //clear map from last frame
+    std::fill(map_.begin(), map_.end(), 0.0f);
+    //clear previous frames' occupied cell list
+    occupied_cells.clear();
+
+    //calculate width of cells
+    std::size_t rows = height_ / cell_size_;
+    std::size_t cols = width_ / cell_size_;
+
+
+    for(size_t i = 0; i < num_p_; i++){
+        //OOB check
+        if(particles_[i].pos.x >= 0 && particles_[i].pos.x < width_ &&
+        particles_[i].pos.y >= 0 && particles_[i].pos.y < height_){
+
+            //calc pmap grid cell
+            std::size_t cell_row = std::floor(particles_[i].pos.y / cell_size_);
+            std::size_t cell_col = std::floor(particles_[i].pos.x / cell_size_);
+
+            std::size_t index = cell_row * cols + cell_col;
+
+            if(map_[index] == 0.f){
+                occupied_cells.push_back(index);
+            }
+
+            map_[index] += 1.0f / static_cast<float>(num_p_); 
+        }
+    }
 };

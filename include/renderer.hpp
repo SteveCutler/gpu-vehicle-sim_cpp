@@ -16,10 +16,11 @@ private:
     sf::Sprite m_sprite;
     bool m_arrow_viz;
     sf::VertexArray m_arrows;
+    sf::VertexArray m_p_grid;
     sf::RenderWindow m_window;
 
 public:
-    Renderer(std::size_t width, std::size_t height, bool arrow_viz);
+    Renderer(std::size_t width, std::size_t height, bool arrow_viz, std::size_t cell_size);
 
     bool draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env, const DriftItem& target, const ProbabilityMap& p_map);
     ~Renderer() = default;

@@ -66,7 +66,8 @@ int main(int argNum, char* argVals[]){
 
     //init Probability Map
     float prob_rad = 50.f;
-    ProbabilityMap p_map(driftDynamics, width, height, 10, target.x, target.y, prob_rad);
+    std::size_t cell_size = 10;
+    ProbabilityMap p_map(driftDynamics, width, height, 10, target.x, target.y, prob_rad, cell_size);
 
 
     //allocating variables outside hot loop
@@ -80,7 +81,7 @@ int main(int argNum, char* argVals[]){
     //if rendering enabled create rendering logic
     #ifdef ENABLE_RENDERER
         //create renderer
-        Renderer renderer(width, height, arrow_viz);
+        Renderer renderer(width, height, arrow_viz, cell_size);
     #endif
 
 
@@ -114,6 +115,9 @@ int main(int argNum, char* argVals[]){
 
             //update probability particles
             p_map.update(env, dt);
+
+            //compute probability
+            p_map.computeProb();
 
         //optionally display data
         #ifdef ENABLE_RENDERER
