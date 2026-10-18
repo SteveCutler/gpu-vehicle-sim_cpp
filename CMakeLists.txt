@@ -9,6 +9,7 @@ add_executable(vehicle_sim
     src/environment.cpp
     src/dynamics.cpp
     src/controller.cpp
+    src/DriftDynamics.cpp
 
 )
 

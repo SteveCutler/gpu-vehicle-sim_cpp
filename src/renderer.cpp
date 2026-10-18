@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "environment.hpp"
+#include "DriftItem.hpp"
 
 Renderer::Renderer(std::size_t width, std::size_t height, bool arrow_viz):
 m_width(width),
@@ -13,7 +14,7 @@ m_scale(sf::Vector2f(1.0f, 1.0f)),
 m_sprite(m_texture),
 m_arrow_viz(arrow_viz),
 m_arrows(sf::PrimitiveType::Lines, width/16 * height/16 * 6),
-m_window(sf::VideoMode({m_width, m_height}), "Vehicle Sim")
+m_window(sf::VideoMode({m_width, m_height}), "Search&Rescue Sim")
 {
     //Render logic initialization
     m_sprite.setScale(m_scale);
@@ -24,7 +25,7 @@ m_window(sf::VideoMode({m_width, m_height}), "Vehicle Sim")
     //display performance time here
 };
 
-bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env){
+bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env, DriftItem& target){
 
     //check if window has been closed:
     while (auto event = m_window.pollEvent()) {
@@ -40,15 +41,31 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     //vehicle count
     const std::size_t count = vehicles.getSize();
 
+    //create vehicle shape
     sf::ConvexShape vehicleShape(3);
     vehicleShape.setPoint(0, {10.f, 0.f});   
     vehicleShape.setPoint(1, {-7.f, -6.f});
     vehicleShape.setPoint(2, {-7.f,  6.f});
     vehicleShape.setFillColor(sf::Color::Cyan);
 
+    //create goal shape
     sf::CircleShape goalShape(4.f);
     goalShape.setOrigin({4.f, 4.f});
     goalShape.setFillColor(sf::Color::Green);
+
+    //create target shape
+    sf::ConvexShape targetShape(10);
+    targetShape.setPoint(0, {0.f, -5.f});
+    targetShape.setPoint(1, {1.18f, -1.62f});
+    targetShape.setPoint(2, {4.76f, -1.55f});
+    targetShape.setPoint(3, {1.9f, 0.62f});
+    targetShape.setPoint(4, {2.94f, 4.05f});
+    targetShape.setPoint(5, {0.f, 2.f});
+    targetShape.setPoint(6, {-2.94f, 4.05f});
+    targetShape.setPoint(7, {-1.9f, 0.62f});
+    targetShape.setPoint(8, {-4.76f, -1.55f});
+    targetShape.setPoint(9, {-1.18f, -1.62f});
+    targetShape.setFillColor(sf::Color::Red);
 
     //clear previous frame    
     m_window.clear(sf::Color::Black);
@@ -102,6 +119,10 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     if(m_arrow_viz){
         m_window.draw(m_arrows);
     }
+    
+    //draw target
+    targetShape.setPosition({target.x,target.y});
+    m_window.draw(targetShape);
 
     m_window.display();
 

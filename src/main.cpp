@@ -6,6 +6,8 @@
 #include <chrono>
 #include <iostream>
 #include "stateExport.hpp"
+#include "DriftItem.hpp"
+#include "DriftDynamics.hpp"
 
 #ifdef ENABLE_RENDERER
 #include <SFML/Window.hpp>
@@ -24,6 +26,9 @@ int main(int argNum, char* argVals[]){
     constexpr std::size_t height = 500;
     constexpr float dt = 0.02f;
     constexpr bool arrow_viz = true;
+
+
+    
 
     //default values
     std::size_t N = 5;
@@ -50,6 +55,14 @@ int main(int argNum, char* argVals[]){
 
     //create dynamics updater
     Dynamics dynamics;
+    //Drift dynamics
+    DriftDynamics driftDynamics;
+
+    //target initialization
+    DriftItem target;
+    target.x = static_cast<float>(width/2.0f);
+    target.y = static_cast<float>(height*0.8f);
+
 
     //allocating variables outside hot loop
     VehicleState vs;
@@ -90,9 +103,13 @@ int main(int argNum, char* argVals[]){
 
     
             }
+
+            //update target location
+            driftDynamics.DriftUpdate(target, env.getDisturbance(target.x, target.y, 0.0f), dt);
+
         //optionally display data
         #ifdef ENABLE_RENDERER
-            bool running = renderer.draw(vehicles, dt, curr_step, env);
+            bool running = renderer.draw(vehicles, dt, curr_step, env, target);
             if(!running) {
                 break;
             }
@@ -126,7 +143,7 @@ int main(int argNum, char* argVals[]){
 
     // Keep showing the final state and handling window events.
     #ifdef ENABLE_RENDERER
-    while (renderer.draw(vehicles, dt, curr_step, env)) {}
+    while (renderer.draw(vehicles, dt, curr_step, env, target)) {}
     #endif
 
  

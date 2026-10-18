@@ -3,6 +3,7 @@
 #include <SFML/Window.hpp>
 #include "vehicleTypes.hpp"
 #include "vehicleBatch.hpp"
+#include "DriftItem.hpp"
 
 class Renderer
 {
@@ -19,7 +20,7 @@ private:
 public:
     Renderer(std::size_t width, std::size_t height, bool arrow_viz);
 
-    bool draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env);
+    bool draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env, DriftItem& target);
     ~Renderer() = default;
 };
 

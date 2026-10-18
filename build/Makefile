@@ -129,6 +129,30 @@ vehicle_sim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/build
 .PHONY : vehicle_sim/fast
 
+src/DriftDynamics.o: src/DriftDynamics.cpp.o
+.PHONY : src/DriftDynamics.o
+
+# target to build an object file
+src/DriftDynamics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o
+.PHONY : src/DriftDynamics.cpp.o
+
+src/DriftDynamics.i: src/DriftDynamics.cpp.i
+.PHONY : src/DriftDynamics.i
+
+# target to preprocess a source file
+src/DriftDynamics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.i
+.PHONY : src/DriftDynamics.cpp.i
+
+src/DriftDynamics.s: src/DriftDynamics.cpp.s
+.PHONY : src/DriftDynamics.s
+
+# target to generate assembly for a file
+src/DriftDynamics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.s
+.PHONY : src/DriftDynamics.cpp.s
+
 src/controller.o: src/controller.cpp.o
 .PHONY : src/controller.o
 
@@ -282,6 +306,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... vehicle_sim"
+	@echo "... src/DriftDynamics.o"
+	@echo "... src/DriftDynamics.i"
+	@echo "... src/DriftDynamics.s"
 	@echo "... src/controller.o"
 	@echo "... src/controller.i"
 	@echo "... src/controller.s"

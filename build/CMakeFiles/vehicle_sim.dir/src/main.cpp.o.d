@@ -854,6 +854,8 @@ CMakeFiles/vehicle_sim.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+  /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/DriftItem.hpp \
+  /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/DriftDynamics.hpp \
   /opt/homebrew/include/SFML/Window.hpp \
   /opt/homebrew/include/SFML/Window/Clipboard.hpp \
   /opt/homebrew/include/SFML/Window/Export.hpp \
