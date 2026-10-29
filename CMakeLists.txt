@@ -3,6 +3,29 @@ project(gpu_vehicle_sim LANGUAGES CXX)
 
 option(ENABLE_RENDERER "Build the SFML renderer" ON)
 
+find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System)
+
+# Fluid computation.
+add_library(fluid_core STATIC
+    src/fluid/FluidGrid.cpp
+    src/fluid/Emitter.cpp
+)
+
+target_link_libraries(fluid_core PRIVATE
+    SFML::Graphics
+    SFML::Window
+    SFML::System
+)
+
+
+
+target_include_directories(fluid_core PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+target_compile_features(fluid_core PUBLIC cxx_std_17)
+
+# Main application.
 add_executable(vehicle_sim
     src/main.cpp
     src/vehicle/vehicleBatch.cpp
@@ -13,15 +36,25 @@ add_executable(vehicle_sim
     src/vehicle/ProbabilityMap.cpp
 )
 
-target_include_directories(vehicle_sim PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
+target_link_libraries(vehicle_sim PRIVATE fluid_core)
 
-target_compile_features(vehicle_sim PRIVATE cxx_std_17)
-
+# Optional rendering and UI.
 if(ENABLE_RENDERER)
-    find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System)
-    target_sources(vehicle_sim PRIVATE src/vehicle/renderer.cpp)
-    target_link_libraries(vehicle_sim PRIVATE SFML::Graphics SFML::Window SFML::System)
-    target_compile_definitions(vehicle_sim PRIVATE ENABLE_RENDERER)
+
+    target_sources(vehicle_sim PRIVATE
+        src/vehicle/renderer.cpp
+  
+        src/fluid/Slider.cpp
+    )
+
+    target_link_libraries(vehicle_sim PRIVATE
+        SFML::Graphics
+        SFML::Window
+        SFML::System
+    )
+
+    target_compile_definitions(vehicle_sim PRIVATE
+        ENABLE_RENDERER
+        "FLUID_FONT_PATH=\"${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/RobotoMono.ttf\""
+    )
 endif()

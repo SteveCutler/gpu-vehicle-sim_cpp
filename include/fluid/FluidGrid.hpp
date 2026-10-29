@@ -4,8 +4,8 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include "../include/FastNoiseLite.h"
-#include "../include/Emitter.hpp"
+#include "../include/fluid/FastNoiseLite.h"
+#include "../include/fluid/Emitter.hpp"
 #include <thread>
 
 //Divergence measurement test struct
@@ -16,12 +16,12 @@ struct DivergenceStats {
 };
 
 
-class Grid
+class FluidGrid
     {
         friend struct ScalarBoundaryTestAccess;
 
     public:
-        Grid(std::size_t width, std::size_t height, std::vector<Emitter*> emitters, int seed, bool threaded);
+        FluidGrid(std::size_t width, std::size_t height, std::vector<Emitter*> emitters, int seed, bool threaded);
         std::vector<std::uint8_t> m_pixels;
         float m_buoyancy;
         float m_diff_co;

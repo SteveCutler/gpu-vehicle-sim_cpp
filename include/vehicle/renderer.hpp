@@ -11,7 +11,7 @@ class Renderer
 private:
     unsigned int m_width;
     unsigned int m_height;
-    sf::Texture m_texture;
+    sf::Texture m_fluid_texture;
     sf::Vector2f m_scale;
     sf::Sprite m_sprite;
     bool m_arrow_viz;

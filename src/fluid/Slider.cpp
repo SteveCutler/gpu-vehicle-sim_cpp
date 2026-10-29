@@ -1,4 +1,4 @@
-#include "Slider.hpp"
+#include "fluid/Slider.hpp"
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 

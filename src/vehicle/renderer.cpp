@@ -10,9 +10,9 @@
 Renderer::Renderer(std::size_t width, std::size_t height, bool arrow_viz, std::size_t cell_size):
 m_width(width),
 m_height(height),
-m_texture(sf::Vector2u(width, height)),
+m_fluid_texture(sf::Vector2u(width, height)),
 m_scale(sf::Vector2f(1.0f, 1.0f)),
-m_sprite(m_texture),
+m_sprite(m_fluid_texture),
 m_arrow_viz(arrow_viz),
 m_arrows(sf::PrimitiveType::Lines, width/16 * height/16 * 6),
 m_p_grid(sf::PrimitiveType::Triangles, width/cell_size * height/cell_size * 6),
@@ -100,6 +100,10 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     // draw velocity arrow samples
 
     if(m_arrow_viz){
+        //extract u and v velocity directions
+       // auto [u, v] = env.getDisturbance(x, y, dt*curr_step);
+        const auto& u_velocity = env.fluid_grid.u_velocity();
+        const auto& v_velocity = env.fluid_grid.v_velocity();
         std::size_t index=0;
         for (std::size_t y = 0; y<m_height; y+=16){
             std::size_t row = y*m_width;
@@ -107,8 +111,6 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
             for(std::size_t x =0; x<m_width; x+=16){
                 std::size_t i = row+x;
                 
-                //extract u and v velocity directions
-                auto [u, v] = env.getDisturbance(x, y, dt*curr_step);
 
                 //increase length for display
               //  u *= 10;
@@ -116,13 +118,13 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
                 
                 //create arrow points
                 m_arrows[index].position = sf::Vector2f(static_cast<float>(x),static_cast<float>(y));
-                m_arrows[index+1].position = sf::Vector2f(static_cast<float>(x+u),static_cast<float>(y+v));
+                m_arrows[index+1].position = sf::Vector2f(static_cast<float>(x+u_velocity[i]),static_cast<float>(y+v_velocity[i]));
                 
-                m_arrows[index+2].position = sf::Vector2f(static_cast<float>(x+u),static_cast<float>(y+v));
-                m_arrows[index+3].position = sf::Vector2f(static_cast<float>(x+u - u*.25 + v*.25),static_cast<float>(y+v - v*.25-u*.25));
+                m_arrows[index+2].position = sf::Vector2f(static_cast<float>(x+u_velocity[i]),static_cast<float>(y+v_velocity[i]));
+                m_arrows[index+3].position = sf::Vector2f(static_cast<float>(x+u_velocity[i] - u_velocity[i]*.25 + v_velocity[i]*.25),static_cast<float>(y+v_velocity[i] - v_velocity[i]*.25-u_velocity[i]*.25));
                 
-                m_arrows[index+4].position = sf::Vector2f(static_cast<float>(x+u),static_cast<float>(y+v));
-                m_arrows[index+5].position = sf::Vector2f(static_cast<float>(x+u - u*.25 - v*.25),static_cast<float>(y+v - v*.25+u*.25));
+                m_arrows[index+4].position = sf::Vector2f(static_cast<float>(x+u_velocity[i]),static_cast<float>(y+v_velocity[i]));
+                m_arrows[index+5].position = sf::Vector2f(static_cast<float>(x+u_velocity[i] - u_velocity[i]*.25 - v_velocity[i]*.25),static_cast<float>(y+v_velocity[i] - v_velocity[i]*.25+u_velocity[i]*.25));
                 
                 
                 index += 6;
@@ -131,7 +133,13 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         }
     }
 
+    //Load fluid data into texture
+    const auto& pixels = env.get_pixels();
     // Load pixel RGBA data into texture
+    m_fluid_texture.update(pixels.data());
+    m_window.draw(m_sprite);
+
+    // Load and render vehicle data
     for(int i = 0; i<count; i++){
         VehicleState s = vehicles.load(i);
 
@@ -167,7 +175,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         
     }
     //draw probability map
-    m_window.draw(m_p_grid);
+   // m_window.draw(m_p_grid);
     
     
     //render arrows

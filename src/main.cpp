@@ -1,3 +1,4 @@
+//Vehicle Include
 #include <cstddef>
 #include "vehicle/environment.hpp"
 #include "vehicle/vehicleBatch.hpp"
@@ -9,6 +10,16 @@
 #include "vehicle/DriftItem.hpp"
 #include "vehicle/DriftDynamics.hpp"
 #include "vehicle/ProbabilityMap.hpp"
+
+//Fluid Include
+#include <iostream>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <vector>
+
+#include "fluid/FluidGrid.hpp"
+#include "fluid/Slider.hpp"
+#include "fluid/Emitter.hpp"
 
 #ifdef ENABLE_RENDERER
 #include <SFML/Window.hpp>
@@ -27,9 +38,32 @@ int main(int argNum, char* argVals[]){
     constexpr std::size_t height = 500;
     constexpr float dt = 0.02f;
     constexpr bool arrow_viz = true;
+    constexpr std::size_t seed = 42;
+
+     ////////////
+    //FLUID INIT
+    ////////////
+
+        Emitter magenta{sf::Vector2f(width*.4f,height*.7f), 50.f, sf::Vector3f(1.f,0.f,.05f)};
 
 
-    
+        std::vector<Emitter*> emitters{
+            &magenta,
+
+        };
+        
+
+    //mutlithreaded switch
+    bool threaded = false;
+
+    //Font loading
+    sf::Font font;
+    bool loaded = font.openFromFile(FLUID_FONT_PATH);
+
+    if(!loaded){
+        std::cerr << "Failed to load font\n";
+        return EXIT_FAILURE;
+    }
 
     //default values
     std::size_t N = 5;
@@ -46,7 +80,7 @@ int main(int argNum, char* argVals[]){
     std::size_t curr_step = 0;
     
     //initialize environment with 0 wind at first
-    environment env(width, height);
+    environment env(width, height, emitters, seed);
     
     //initialize vehicleState data
     vehicleBatch vehicles(N, env);
@@ -76,6 +110,8 @@ int main(int argNum, char* argVals[]){
     Action action;
     VehicleState newState;
 
+   
+
     // create a clock to track the elapsed time
     // TO DO create performance clock
 
@@ -92,6 +128,12 @@ int main(int argNum, char* argVals[]){
         //run sim for steps amount of steps
         while(curr_step < steps){
 
+            //FLUID UPDATE
+
+            env.update_fluid(dt);
+
+
+            //VEHICLE UPDATE
             //loop over every vehicle every step
             for(int x = 0; x < N; x++){
                 //load vehicle state

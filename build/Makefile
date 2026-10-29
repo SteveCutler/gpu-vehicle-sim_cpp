@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named fluid_core
+
+# Build rule for target.
+fluid_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fluid_core
+.PHONY : fluid_core
+
+# fast build rule for target.
+fluid_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fluid_core.dir/build.make CMakeFiles/fluid_core.dir/build
+.PHONY : fluid_core/fast
+
+#=============================================================================
 # Target rules for targets named vehicle_sim
 
 # Build rule for target.
@@ -128,6 +141,78 @@ vehicle_sim: cmake_check_build_system
 vehicle_sim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/build
 .PHONY : vehicle_sim/fast
+
+src/fluid/Emitter.o: src/fluid/Emitter.cpp.o
+.PHONY : src/fluid/Emitter.o
+
+# target to build an object file
+src/fluid/Emitter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fluid_core.dir/build.make CMakeFiles/fluid_core.dir/src/fluid/Emitter.cpp.o
+.PHONY : src/fluid/Emitter.cpp.o
+
+src/fluid/Emitter.i: src/fluid/Emitter.cpp.i
+.PHONY : src/fluid/Emitter.i
+
+# target to preprocess a source file
+src/fluid/Emitter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fluid_core.dir/build.make CMakeFiles/fluid_core.dir/src/fluid/Emitter.cpp.i
+.PHONY : src/fluid/Emitter.cpp.i
+
+src/fluid/Emitter.s: src/fluid/Emitter.cpp.s
+.PHONY : src/fluid/Emitter.s
+
+# target to generate assembly for a file
+src/fluid/Emitter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fluid_core.dir/build.make CMakeFiles/fluid_core.dir/src/fluid/Emitter.cpp.s
+.PHONY : src/fluid/Emitter.cpp.s
+
+src/fluid/FluidGrid.o: src/fluid/FluidGrid.cpp.o
+.PHONY : src/fluid/FluidGrid.o
+
+# target to build an object file
+src/fluid/FluidGrid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fluid_core.dir/build.make CMakeFiles/fluid_core.dir/src/fluid/FluidGrid.cpp.o
+.PHONY : src/fluid/FluidGrid.cpp.o
+
+src/fluid/FluidGrid.i: src/fluid/FluidGrid.cpp.i
+.PHONY : src/fluid/FluidGrid.i
+
+# target to preprocess a source file
+src/fluid/FluidGrid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fluid_core.dir/build.make CMakeFiles/fluid_core.dir/src/fluid/FluidGrid.cpp.i
+.PHONY : src/fluid/FluidGrid.cpp.i
+
+src/fluid/FluidGrid.s: src/fluid/FluidGrid.cpp.s
+.PHONY : src/fluid/FluidGrid.s
+
+# target to generate assembly for a file
+src/fluid/FluidGrid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fluid_core.dir/build.make CMakeFiles/fluid_core.dir/src/fluid/FluidGrid.cpp.s
+.PHONY : src/fluid/FluidGrid.cpp.s
+
+src/fluid/Slider.o: src/fluid/Slider.cpp.o
+.PHONY : src/fluid/Slider.o
+
+# target to build an object file
+src/fluid/Slider.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/fluid/Slider.cpp.o
+.PHONY : src/fluid/Slider.cpp.o
+
+src/fluid/Slider.i: src/fluid/Slider.cpp.i
+.PHONY : src/fluid/Slider.i
+
+# target to preprocess a source file
+src/fluid/Slider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/fluid/Slider.cpp.i
+.PHONY : src/fluid/Slider.cpp.i
+
+src/fluid/Slider.s: src/fluid/Slider.cpp.s
+.PHONY : src/fluid/Slider.s
+
+# target to generate assembly for a file
+src/fluid/Slider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/fluid/Slider.cpp.s
+.PHONY : src/fluid/Slider.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -329,7 +414,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... fluid_core"
 	@echo "... vehicle_sim"
+	@echo "... src/fluid/Emitter.o"
+	@echo "... src/fluid/Emitter.i"
+	@echo "... src/fluid/Emitter.s"
+	@echo "... src/fluid/FluidGrid.o"
+	@echo "... src/fluid/FluidGrid.i"
+	@echo "... src/fluid/FluidGrid.s"
+	@echo "... src/fluid/Slider.o"
+	@echo "... src/fluid/Slider.i"
+	@echo "... src/fluid/Slider.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
