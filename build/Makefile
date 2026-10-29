@@ -129,126 +129,6 @@ vehicle_sim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/build
 .PHONY : vehicle_sim/fast
 
-src/DriftDynamics.o: src/DriftDynamics.cpp.o
-.PHONY : src/DriftDynamics.o
-
-# target to build an object file
-src/DriftDynamics.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o
-.PHONY : src/DriftDynamics.cpp.o
-
-src/DriftDynamics.i: src/DriftDynamics.cpp.i
-.PHONY : src/DriftDynamics.i
-
-# target to preprocess a source file
-src/DriftDynamics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.i
-.PHONY : src/DriftDynamics.cpp.i
-
-src/DriftDynamics.s: src/DriftDynamics.cpp.s
-.PHONY : src/DriftDynamics.s
-
-# target to generate assembly for a file
-src/DriftDynamics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.s
-.PHONY : src/DriftDynamics.cpp.s
-
-src/ProbabilityMap.o: src/ProbabilityMap.cpp.o
-.PHONY : src/ProbabilityMap.o
-
-# target to build an object file
-src/ProbabilityMap.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o
-.PHONY : src/ProbabilityMap.cpp.o
-
-src/ProbabilityMap.i: src/ProbabilityMap.cpp.i
-.PHONY : src/ProbabilityMap.i
-
-# target to preprocess a source file
-src/ProbabilityMap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.i
-.PHONY : src/ProbabilityMap.cpp.i
-
-src/ProbabilityMap.s: src/ProbabilityMap.cpp.s
-.PHONY : src/ProbabilityMap.s
-
-# target to generate assembly for a file
-src/ProbabilityMap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.s
-.PHONY : src/ProbabilityMap.cpp.s
-
-src/controller.o: src/controller.cpp.o
-.PHONY : src/controller.o
-
-# target to build an object file
-src/controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/controller.cpp.o
-.PHONY : src/controller.cpp.o
-
-src/controller.i: src/controller.cpp.i
-.PHONY : src/controller.i
-
-# target to preprocess a source file
-src/controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/controller.cpp.i
-.PHONY : src/controller.cpp.i
-
-src/controller.s: src/controller.cpp.s
-.PHONY : src/controller.s
-
-# target to generate assembly for a file
-src/controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/controller.cpp.s
-.PHONY : src/controller.cpp.s
-
-src/dynamics.o: src/dynamics.cpp.o
-.PHONY : src/dynamics.o
-
-# target to build an object file
-src/dynamics.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o
-.PHONY : src/dynamics.cpp.o
-
-src/dynamics.i: src/dynamics.cpp.i
-.PHONY : src/dynamics.i
-
-# target to preprocess a source file
-src/dynamics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.i
-.PHONY : src/dynamics.cpp.i
-
-src/dynamics.s: src/dynamics.cpp.s
-.PHONY : src/dynamics.s
-
-# target to generate assembly for a file
-src/dynamics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.s
-.PHONY : src/dynamics.cpp.s
-
-src/environment.o: src/environment.cpp.o
-.PHONY : src/environment.o
-
-# target to build an object file
-src/environment.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/environment.cpp.o
-.PHONY : src/environment.cpp.o
-
-src/environment.i: src/environment.cpp.i
-.PHONY : src/environment.i
-
-# target to preprocess a source file
-src/environment.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/environment.cpp.i
-.PHONY : src/environment.cpp.i
-
-src/environment.s: src/environment.cpp.s
-.PHONY : src/environment.s
-
-# target to generate assembly for a file
-src/environment.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/environment.cpp.s
-.PHONY : src/environment.cpp.s
-
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -273,53 +153,173 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/renderer.o: src/renderer.cpp.o
-.PHONY : src/renderer.o
+src/vehicle/DriftDynamics.o: src/vehicle/DriftDynamics.cpp.o
+.PHONY : src/vehicle/DriftDynamics.o
 
 # target to build an object file
-src/renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o
-.PHONY : src/renderer.cpp.o
+src/vehicle/DriftDynamics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o
+.PHONY : src/vehicle/DriftDynamics.cpp.o
 
-src/renderer.i: src/renderer.cpp.i
-.PHONY : src/renderer.i
+src/vehicle/DriftDynamics.i: src/vehicle/DriftDynamics.cpp.i
+.PHONY : src/vehicle/DriftDynamics.i
 
 # target to preprocess a source file
-src/renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/renderer.cpp.i
-.PHONY : src/renderer.cpp.i
+src/vehicle/DriftDynamics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.i
+.PHONY : src/vehicle/DriftDynamics.cpp.i
 
-src/renderer.s: src/renderer.cpp.s
-.PHONY : src/renderer.s
+src/vehicle/DriftDynamics.s: src/vehicle/DriftDynamics.cpp.s
+.PHONY : src/vehicle/DriftDynamics.s
 
 # target to generate assembly for a file
-src/renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/renderer.cpp.s
-.PHONY : src/renderer.cpp.s
+src/vehicle/DriftDynamics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.s
+.PHONY : src/vehicle/DriftDynamics.cpp.s
 
-src/vehicleBatch.o: src/vehicleBatch.cpp.o
-.PHONY : src/vehicleBatch.o
+src/vehicle/ProbabilityMap.o: src/vehicle/ProbabilityMap.cpp.o
+.PHONY : src/vehicle/ProbabilityMap.o
 
 # target to build an object file
-src/vehicleBatch.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o
-.PHONY : src/vehicleBatch.cpp.o
+src/vehicle/ProbabilityMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o
+.PHONY : src/vehicle/ProbabilityMap.cpp.o
 
-src/vehicleBatch.i: src/vehicleBatch.cpp.i
-.PHONY : src/vehicleBatch.i
+src/vehicle/ProbabilityMap.i: src/vehicle/ProbabilityMap.cpp.i
+.PHONY : src/vehicle/ProbabilityMap.i
 
 # target to preprocess a source file
-src/vehicleBatch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.i
-.PHONY : src/vehicleBatch.cpp.i
+src/vehicle/ProbabilityMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.i
+.PHONY : src/vehicle/ProbabilityMap.cpp.i
 
-src/vehicleBatch.s: src/vehicleBatch.cpp.s
-.PHONY : src/vehicleBatch.s
+src/vehicle/ProbabilityMap.s: src/vehicle/ProbabilityMap.cpp.s
+.PHONY : src/vehicle/ProbabilityMap.s
 
 # target to generate assembly for a file
-src/vehicleBatch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.s
-.PHONY : src/vehicleBatch.cpp.s
+src/vehicle/ProbabilityMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.s
+.PHONY : src/vehicle/ProbabilityMap.cpp.s
+
+src/vehicle/controller.o: src/vehicle/controller.cpp.o
+.PHONY : src/vehicle/controller.o
+
+# target to build an object file
+src/vehicle/controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o
+.PHONY : src/vehicle/controller.cpp.o
+
+src/vehicle/controller.i: src/vehicle/controller.cpp.i
+.PHONY : src/vehicle/controller.i
+
+# target to preprocess a source file
+src/vehicle/controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.i
+.PHONY : src/vehicle/controller.cpp.i
+
+src/vehicle/controller.s: src/vehicle/controller.cpp.s
+.PHONY : src/vehicle/controller.s
+
+# target to generate assembly for a file
+src/vehicle/controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.s
+.PHONY : src/vehicle/controller.cpp.s
+
+src/vehicle/dynamics.o: src/vehicle/dynamics.cpp.o
+.PHONY : src/vehicle/dynamics.o
+
+# target to build an object file
+src/vehicle/dynamics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o
+.PHONY : src/vehicle/dynamics.cpp.o
+
+src/vehicle/dynamics.i: src/vehicle/dynamics.cpp.i
+.PHONY : src/vehicle/dynamics.i
+
+# target to preprocess a source file
+src/vehicle/dynamics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.i
+.PHONY : src/vehicle/dynamics.cpp.i
+
+src/vehicle/dynamics.s: src/vehicle/dynamics.cpp.s
+.PHONY : src/vehicle/dynamics.s
+
+# target to generate assembly for a file
+src/vehicle/dynamics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.s
+.PHONY : src/vehicle/dynamics.cpp.s
+
+src/vehicle/environment.o: src/vehicle/environment.cpp.o
+.PHONY : src/vehicle/environment.o
+
+# target to build an object file
+src/vehicle/environment.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o
+.PHONY : src/vehicle/environment.cpp.o
+
+src/vehicle/environment.i: src/vehicle/environment.cpp.i
+.PHONY : src/vehicle/environment.i
+
+# target to preprocess a source file
+src/vehicle/environment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.i
+.PHONY : src/vehicle/environment.cpp.i
+
+src/vehicle/environment.s: src/vehicle/environment.cpp.s
+.PHONY : src/vehicle/environment.s
+
+# target to generate assembly for a file
+src/vehicle/environment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.s
+.PHONY : src/vehicle/environment.cpp.s
+
+src/vehicle/renderer.o: src/vehicle/renderer.cpp.o
+.PHONY : src/vehicle/renderer.o
+
+# target to build an object file
+src/vehicle/renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o
+.PHONY : src/vehicle/renderer.cpp.o
+
+src/vehicle/renderer.i: src/vehicle/renderer.cpp.i
+.PHONY : src/vehicle/renderer.i
+
+# target to preprocess a source file
+src/vehicle/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.i
+.PHONY : src/vehicle/renderer.cpp.i
+
+src/vehicle/renderer.s: src/vehicle/renderer.cpp.s
+.PHONY : src/vehicle/renderer.s
+
+# target to generate assembly for a file
+src/vehicle/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.s
+.PHONY : src/vehicle/renderer.cpp.s
+
+src/vehicle/vehicleBatch.o: src/vehicle/vehicleBatch.cpp.o
+.PHONY : src/vehicle/vehicleBatch.o
+
+# target to build an object file
+src/vehicle/vehicleBatch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o
+.PHONY : src/vehicle/vehicleBatch.cpp.o
+
+src/vehicle/vehicleBatch.i: src/vehicle/vehicleBatch.cpp.i
+.PHONY : src/vehicle/vehicleBatch.i
+
+# target to preprocess a source file
+src/vehicle/vehicleBatch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.i
+.PHONY : src/vehicle/vehicleBatch.cpp.i
+
+src/vehicle/vehicleBatch.s: src/vehicle/vehicleBatch.cpp.s
+.PHONY : src/vehicle/vehicleBatch.s
+
+# target to generate assembly for a file
+src/vehicle/vehicleBatch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.s
+.PHONY : src/vehicle/vehicleBatch.cpp.s
 
 # Help Target
 help:
@@ -330,30 +330,30 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... vehicle_sim"
-	@echo "... src/DriftDynamics.o"
-	@echo "... src/DriftDynamics.i"
-	@echo "... src/DriftDynamics.s"
-	@echo "... src/ProbabilityMap.o"
-	@echo "... src/ProbabilityMap.i"
-	@echo "... src/ProbabilityMap.s"
-	@echo "... src/controller.o"
-	@echo "... src/controller.i"
-	@echo "... src/controller.s"
-	@echo "... src/dynamics.o"
-	@echo "... src/dynamics.i"
-	@echo "... src/dynamics.s"
-	@echo "... src/environment.o"
-	@echo "... src/environment.i"
-	@echo "... src/environment.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/renderer.o"
-	@echo "... src/renderer.i"
-	@echo "... src/renderer.s"
-	@echo "... src/vehicleBatch.o"
-	@echo "... src/vehicleBatch.i"
-	@echo "... src/vehicleBatch.s"
+	@echo "... src/vehicle/DriftDynamics.o"
+	@echo "... src/vehicle/DriftDynamics.i"
+	@echo "... src/vehicle/DriftDynamics.s"
+	@echo "... src/vehicle/ProbabilityMap.o"
+	@echo "... src/vehicle/ProbabilityMap.i"
+	@echo "... src/vehicle/ProbabilityMap.s"
+	@echo "... src/vehicle/controller.o"
+	@echo "... src/vehicle/controller.i"
+	@echo "... src/vehicle/controller.s"
+	@echo "... src/vehicle/dynamics.o"
+	@echo "... src/vehicle/dynamics.i"
+	@echo "... src/vehicle/dynamics.s"
+	@echo "... src/vehicle/environment.o"
+	@echo "... src/vehicle/environment.i"
+	@echo "... src/vehicle/environment.s"
+	@echo "... src/vehicle/renderer.o"
+	@echo "... src/vehicle/renderer.i"
+	@echo "... src/vehicle/renderer.s"
+	@echo "... src/vehicle/vehicleBatch.o"
+	@echo "... src/vehicle/vehicleBatch.i"
+	@echo "... src/vehicle/vehicleBatch.s"
 .PHONY : help
 
 

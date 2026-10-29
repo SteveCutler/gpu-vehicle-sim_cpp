@@ -1,8 +1,8 @@
-#include "ProbabilityMap.hpp"
+#include "vehicle/ProbabilityMap.hpp"
 #include <vector>
 #include <random>
 #include <algorithm>
-#include "DriftDynamics.hpp"
+#include "vehicle/DriftDynamics.hpp"
 
 ProbabilityMap::ProbabilityMap(DriftDynamics& DD, ::size_t width, std::size_t height, std::size_t num_p, float est_x, float est_y, float p_rad, std::size_t cell_size):
 width_(width),

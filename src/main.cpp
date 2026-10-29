@@ -1,19 +1,19 @@
 #include <cstddef>
-#include "environment.hpp"
-#include "vehicleBatch.hpp"
-#include "controller.hpp"
-#include "dynamics.hpp"
+#include "vehicle/environment.hpp"
+#include "vehicle/vehicleBatch.hpp"
+#include "vehicle/controller.hpp"
+#include "vehicle/dynamics.hpp"
 #include <chrono>
 #include <iostream>
-#include "stateExport.hpp"
-#include "DriftItem.hpp"
-#include "DriftDynamics.hpp"
-#include "ProbabilityMap.hpp"
+#include "vehicle/stateExport.hpp"
+#include "vehicle/DriftItem.hpp"
+#include "vehicle/DriftDynamics.hpp"
+#include "vehicle/ProbabilityMap.hpp"
 
 #ifdef ENABLE_RENDERER
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include "renderer.hpp"
+#include "vehicle/renderer.hpp"
 #endif
 
 using Clock = std::chrono::steady_clock;
@@ -66,8 +66,9 @@ int main(int argNum, char* argVals[]){
 
     //init Probability Map
     float prob_rad = 50.f;
+    std::size_t particle_count = 10;
     std::size_t cell_size = 10;
-    ProbabilityMap p_map(driftDynamics, width, height, 10, target.x, target.y, prob_rad, cell_size);
+    ProbabilityMap p_map(driftDynamics, width, height, particle_count, target.x, target.y, prob_rad, cell_size);
 
 
     //allocating variables outside hot loop

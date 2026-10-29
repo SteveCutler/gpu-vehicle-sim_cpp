@@ -86,126 +86,126 @@ CMakeFiles/vehicle_sim.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/main.cpp -o CMakeFiles/vehicle_sim.dir/src/main.cpp.s
 
-CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
-CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicleBatch.cpp
-CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicleBatch.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
+CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/vehicleBatch.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/vehicleBatch.cpp
 
-CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicleBatch.cpp > CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.i
+CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/vehicleBatch.cpp > CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.i
 
-CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicleBatch.cpp -o CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.s
+CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/vehicleBatch.cpp -o CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.s
 
-CMakeFiles/vehicle_sim.dir/src/environment.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
-CMakeFiles/vehicle_sim.dir/src/environment.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/environment.cpp
-CMakeFiles/vehicle_sim.dir/src/environment.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/vehicle_sim.dir/src/environment.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/environment.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/environment.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/environment.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/environment.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
+CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/environment.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/environment.cpp
 
-CMakeFiles/vehicle_sim.dir/src/environment.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/environment.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/environment.cpp > CMakeFiles/vehicle_sim.dir/src/environment.cpp.i
+CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/environment.cpp > CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.i
 
-CMakeFiles/vehicle_sim.dir/src/environment.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/environment.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/environment.cpp -o CMakeFiles/vehicle_sim.dir/src/environment.cpp.s
+CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/environment.cpp -o CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.s
 
-CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
-CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/dynamics.cpp
-CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/dynamics.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
+CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/dynamics.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/dynamics.cpp
 
-CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/dynamics.cpp > CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.i
+CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/dynamics.cpp > CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.i
 
-CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/dynamics.cpp -o CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.s
+CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/dynamics.cpp -o CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.s
 
-CMakeFiles/vehicle_sim.dir/src/controller.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
-CMakeFiles/vehicle_sim.dir/src/controller.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/controller.cpp
-CMakeFiles/vehicle_sim.dir/src/controller.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/vehicle_sim.dir/src/controller.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/controller.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/controller.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/controller.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/controller.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
+CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/controller.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/controller.cpp
 
-CMakeFiles/vehicle_sim.dir/src/controller.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/controller.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/controller.cpp > CMakeFiles/vehicle_sim.dir/src/controller.cpp.i
+CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/controller.cpp > CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.i
 
-CMakeFiles/vehicle_sim.dir/src/controller.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/controller.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/controller.cpp -o CMakeFiles/vehicle_sim.dir/src/controller.cpp.s
+CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/controller.cpp -o CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.s
 
-CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
-CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/DriftDynamics.cpp
-CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/DriftDynamics.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
+CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/DriftDynamics.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/DriftDynamics.cpp
 
-CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/DriftDynamics.cpp > CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.i
+CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/DriftDynamics.cpp > CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.i
 
-CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/DriftDynamics.cpp -o CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.s
+CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/DriftDynamics.cpp -o CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.s
 
-CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
-CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/ProbabilityMap.cpp
-CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/ProbabilityMap.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
+CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/ProbabilityMap.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/ProbabilityMap.cpp
 
-CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/ProbabilityMap.cpp > CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.i
+CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/ProbabilityMap.cpp > CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.i
 
-CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/ProbabilityMap.cpp -o CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.s
+CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/ProbabilityMap.cpp -o CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.s
 
-CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
-CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/renderer.cpp
-CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/renderer.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o: CMakeFiles/vehicle_sim.dir/flags.make
+CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o: /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/renderer.cpp
+CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o: CMakeFiles/vehicle_sim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o -MF CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o.d -o CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o -c /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/renderer.cpp
 
-CMakeFiles/vehicle_sim.dir/src/renderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/renderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/renderer.cpp > CMakeFiles/vehicle_sim.dir/src/renderer.cpp.i
+CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/renderer.cpp > CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.i
 
-CMakeFiles/vehicle_sim.dir/src/renderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/renderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/renderer.cpp -o CMakeFiles/vehicle_sim.dir/src/renderer.cpp.s
+CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/src/vehicle/renderer.cpp -o CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.s
 
 # Object files for target vehicle_sim
 vehicle_sim_OBJECTS = \
 "CMakeFiles/vehicle_sim.dir/src/main.cpp.o" \
-"CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o" \
-"CMakeFiles/vehicle_sim.dir/src/environment.cpp.o" \
-"CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o" \
-"CMakeFiles/vehicle_sim.dir/src/controller.cpp.o" \
-"CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o" \
-"CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o" \
-"CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o"
+"CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o" \
+"CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o" \
+"CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o" \
+"CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o" \
+"CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o" \
+"CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o" \
+"CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o"
 
 # External object files for target vehicle_sim
 vehicle_sim_EXTERNAL_OBJECTS =
 
 vehicle_sim: CMakeFiles/vehicle_sim.dir/src/main.cpp.o
-vehicle_sim: CMakeFiles/vehicle_sim.dir/src/vehicleBatch.cpp.o
-vehicle_sim: CMakeFiles/vehicle_sim.dir/src/environment.cpp.o
-vehicle_sim: CMakeFiles/vehicle_sim.dir/src/dynamics.cpp.o
-vehicle_sim: CMakeFiles/vehicle_sim.dir/src/controller.cpp.o
-vehicle_sim: CMakeFiles/vehicle_sim.dir/src/DriftDynamics.cpp.o
-vehicle_sim: CMakeFiles/vehicle_sim.dir/src/ProbabilityMap.cpp.o
-vehicle_sim: CMakeFiles/vehicle_sim.dir/src/renderer.cpp.o
+vehicle_sim: CMakeFiles/vehicle_sim.dir/src/vehicle/vehicleBatch.cpp.o
+vehicle_sim: CMakeFiles/vehicle_sim.dir/src/vehicle/environment.cpp.o
+vehicle_sim: CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o
+vehicle_sim: CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o
+vehicle_sim: CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o
+vehicle_sim: CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o
+vehicle_sim: CMakeFiles/vehicle_sim.dir/src/vehicle/renderer.cpp.o
 vehicle_sim: CMakeFiles/vehicle_sim.dir/build.make
 vehicle_sim: /opt/homebrew/lib/libsfml-graphics.3.0.2.dylib
 vehicle_sim: /opt/homebrew/lib/libsfml-window.3.0.2.dylib
