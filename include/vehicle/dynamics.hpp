@@ -1,6 +1,6 @@
 #pragma once
-#include "vehicleTypes.hpp"
-#include "environment.hpp"
+#include "vehicle/vehicleTypes.hpp"
+#include "vehicle/environment.hpp"
 
 
 class Dynamics

@@ -10,21 +10,39 @@ height_(height),
 num_p_(num_p),
 cell_size_(cell_size),
 map_((width/cell_size_) * (height/cell_size_), 0.f),
-DD_(DD)
+DD_(DD),
+rng_(25),
+p_rad_(p_rad),
+origin_x_(est_x),
+origin_y_(est_y)
 {
-    //reserve space for probability particles
-    particles_.reserve(num_p_);
+   
+
+//add_Particles();
 
 
-    //RNG setup 
-    std::mt19937 rng(25);
+};
+
+void ProbabilityMap::update(const environment& env, float dt){
+
+    add_Particles();
+
+    //update probability particle drift
+    for(auto& p : particles_){
+        DD_.DriftUpdate(p.pos, env.getDisturbance(p.pos.x, p.pos.y, 0.f), dt);
+    }
+
+};
+
+void ProbabilityMap::add_Particles(){
+    //adding particles
 
     constexpr float margin = 5.f;
 
-    float max_x = std::clamp((est_x + p_rad), 0.f, static_cast<float>(width_));
-    float min_x = std::clamp((est_x - p_rad), 0.f, static_cast<float>(width_));
-    float max_y = std::clamp((est_y + p_rad), 0.f, static_cast<float>(height_));
-    float min_y = std::clamp((est_y - p_rad), 0.f, static_cast<float>(height_));
+    float max_x = std::clamp((origin_x_ + p_rad_), 0.f, static_cast<float>(width_));
+    float min_x = std::clamp((origin_x_ - p_rad_), 0.f, static_cast<float>(width_));
+    float max_y = std::clamp((origin_y_ + p_rad_), 0.f, static_cast<float>(height_));
+    float min_y = std::clamp((origin_y_ - p_rad_), 0.f, static_cast<float>(height_));
 
     std::uniform_real_distribution<float> randomX(min_x + margin, max_x - margin);
     std::uniform_real_distribution<float> randomY(min_y + margin, max_y - margin);
@@ -33,22 +51,11 @@ DD_(DD)
     float y;
 
     for(size_t i = 0; i < num_p_; i++){
-        particles_.emplace_back( 
-            PredictionParticle(randomX(rng), randomY(rng)) 
+        particles_.push_back( 
+            PredictionParticle(randomX(rng_), randomY(rng_)) 
         );
     };
-
-
-};
-
-void ProbabilityMap::update(const environment& env, float dt){
-
-    //update probability particle drift
-    for(auto& p : particles_){
-        DD_.DriftUpdate(p.pos, env.getDisturbance(p.pos.x, p.pos.y, 0.f), dt);
-    }
-
-};
+}
 
 void ProbabilityMap::computeProb(){
     //clear map from last frame
@@ -61,7 +68,7 @@ void ProbabilityMap::computeProb(){
     std::size_t cols = width_ / cell_size_;
 
 
-    for(size_t i = 0; i < num_p_; i++){
+    for(size_t i = 0; i < particles_.size(); i++){
         //OOB check
         if(particles_[i].pos.x >= 0 && particles_[i].pos.x < width_ &&
         particles_[i].pos.y >= 0 && particles_[i].pos.y < height_){
@@ -76,7 +83,7 @@ void ProbabilityMap::computeProb(){
                 occupied_cells.push_back(index);
             }
 
-            map_[index] += 1.0f / static_cast<float>(num_p_); 
+            map_[index] += 1.0f / static_cast<float>(150); 
         }
     }
 };

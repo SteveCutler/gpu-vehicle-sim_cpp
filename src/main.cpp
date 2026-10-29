@@ -100,8 +100,8 @@ int main(int argNum, char* argVals[]){
     target.y = static_cast<float>(height*0.8f);
 
     //init Probability Map
-    float prob_rad = 50.f;
-    std::size_t particle_count = 10;
+    float prob_rad = 25.f;
+    std::size_t particle_count = 5;
     std::size_t cell_size = 10;
     ProbabilityMap p_map(driftDynamics, width, height, particle_count, target.x, target.y, prob_rad, cell_size);
 

@@ -1,10 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include "vehicleTypes.hpp"
-#include "vehicleBatch.hpp"
-#include "DriftItem.hpp"
-#include "ProbabilityMap.hpp"
+#include "vehicle/vehicleTypes.hpp"
+#include "vehicle/vehicleBatch.hpp"
+#include "vehicle/DriftItem.hpp"
+#include "vehicle/ProbabilityMap.hpp"
 
 class Renderer
 {
@@ -21,7 +21,6 @@ private:
 
 public:
     Renderer(std::size_t width, std::size_t height, bool arrow_viz, std::size_t cell_size);
-
     bool draw(const vehicleBatch& vehicles, float dt, std::size_t curr_step, const environment& env, const DriftItem& target, const ProbabilityMap& p_map);
     ~Renderer() = default;
 };

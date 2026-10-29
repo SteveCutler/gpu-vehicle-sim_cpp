@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
 #include <cstddef>
-#include "environment.hpp"
-#include "vehicleTypes.hpp"
+#include "vehicle/environment.hpp"
+#include "vehicle/vehicleTypes.hpp"
 
 
 class vehicleBatch

@@ -76,7 +76,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     vehicleShape.setFillColor(sf::Color::Cyan);
 
     //create goal shape
-    sf::CircleShape particleShape(2.f);
+    sf::CircleShape particleShape(1.f);
     particleShape.setOrigin({4.f, 4.f});
     particleShape.setFillColor(sf::Color::Green);
 
@@ -175,7 +175,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         
     }
     //draw probability map
-   // m_window.draw(m_p_grid);
+    m_window.draw(m_p_grid);
     
     
     //render arrows
@@ -186,10 +186,10 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     
 
     //drawing probability particles
-    for(size_t p = 0; p < p_map.num_p_; p++){
-        particleShape.setPosition({p_map.particles_[p].pos.x, p_map.particles_[p].pos.y});
-        m_window.draw(particleShape);
-    }
+    // for(size_t p = 0; p < p_map.particles_.size(); p++){
+    //     particleShape.setPosition({p_map.particles_[p].pos.x, p_map.particles_[p].pos.y});
+    //     m_window.draw(particleShape);
+    // }
     
     //draw target
     targetShape.setPosition({target.x,target.y});

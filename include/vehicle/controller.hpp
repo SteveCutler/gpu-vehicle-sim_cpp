@@ -1,6 +1,6 @@
 #pragma once
-#include "vehicleBatch.hpp"
-#include "vehicleTypes.hpp"
+#include "vehicle/vehicleBatch.hpp"
+#include "vehicle/vehicleTypes.hpp"
 
 class Controller
 {
