@@ -511,8 +511,8 @@ void FluidGrid::calcVel_Rows(float dt, std::size_t begin, std::size_t end){
                 float dx = (xr-xl)/2;
                 float dy = (yb-yt)/2;
 
-                m_u_velocity[index] += (-dy*m_curl_mult*dt) * density_sample(index);
-                m_v_velocity[index] += (dx*m_curl_mult*dt) * density_sample(index);
+                m_u_velocity[index] += (-dy*m_curl_mult*dt);
+                m_v_velocity[index] += (dx*m_curl_mult*dt);
                
             
 
