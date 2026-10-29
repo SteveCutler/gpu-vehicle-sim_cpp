@@ -113,6 +113,8 @@ class FluidGrid
         float time_project() const;
         float time_addSource() const;
 
+        std::pair<float,float> vel_sample(float x, float y) const;
+
 
     private:
 
@@ -176,7 +178,7 @@ class FluidGrid
         float density_sample(std::size_t i) const;
         
         void scalarBoundaries(std::vector<float>& field);
-
+        
         FastNoiseLite m_noise_gen;
 
 

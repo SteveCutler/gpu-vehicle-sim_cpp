@@ -44,11 +44,11 @@ int main(int argNum, char* argVals[]){
     //FLUID INIT
     ////////////
 
-        Emitter magenta{sf::Vector2f(width*.4f,height*.7f), 50.f, sf::Vector3f(1.f,0.f,.05f)};
+        Emitter blue{sf::Vector2f(width*.5f,height*.5f), width*1.0f, sf::Vector3f(0.f,0.f,.2f)};
 
 
         std::vector<Emitter*> emitters{
-            &magenta,
+            &blue,
 
         };
         
@@ -65,8 +65,9 @@ int main(int argNum, char* argVals[]){
         return EXIT_FAILURE;
     }
 
-    //default values
-    std::size_t N = 5;
+    //Vehicles
+    std::size_t N = 0;
+    //Steps
     std::size_t steps = 1000;
 
     //take in input variables
@@ -75,7 +76,7 @@ int main(int argNum, char* argVals[]){
     //set step size
     if (argNum > 2) steps = std::stoi(argVals[2]);
     
-    std::cout << "Vehicles: " << N << "\nSteps: " << steps << '\n';
+   // std::cout << "Vehicles: " << N << "\nSteps: " << steps << '\n';
     
     std::size_t curr_step = 0;
     

@@ -14,7 +14,7 @@ m_buoyancy(50.f),
 m_diff_co(4.5f),
 m_viscosity(0.05f),
 m_decay(0.994f),
-m_curl_mult(1000),
+m_curl_mult(100),
 m_noise_freq(0.04f),
 m_mult_threaded(threaded),
 m_noiseTimeMult(10.f),
@@ -1064,6 +1064,51 @@ void FluidGrid::advect_decay_Rows(float dt, const std::vector<float>& source, st
         }
 
     }
+
+}
+
+
+std::pair<float,float> FluidGrid::vel_sample(float x, float y) const{
+        float u_vel = 0.f;
+        float v_vel = 0.f;
+
+        std::size_t x_floor = std::floor(x);
+        std::size_t x_high = x_floor+1;
+        std::size_t y_floor = std::floor(y);
+        std::size_t y_high = y_floor+1;
+
+        std::size_t i = y_floor*m_width + x_floor;
+
+        //finding values at corners
+        std::size_t tl_index = x_floor+y_floor*m_width;
+        std::size_t tr_index = x_high+y_floor*m_width;
+        std::size_t bl_index = x_floor+y_high*m_width;
+        std::size_t br_index = x_high+y_high*m_width;
+
+        float tl_u = m_u_velocity_prev[tl_index];
+        float tr_u = m_u_velocity_prev[tr_index];
+        float bl_u = m_u_velocity_prev[bl_index];
+        float br_u = m_u_velocity_prev[br_index];
+        
+        float tl_v = m_v_velocity_prev[tl_index];
+        float tr_v = m_v_velocity_prev[tr_index];
+        float bl_v = m_v_velocity_prev[bl_index];
+        float br_v = m_v_velocity_prev[br_index];
+
+        //distance from edges
+        float dx = x - x_floor;
+        float dy = y - y_floor;
+
+        //weighting calculations
+        float tl_weight = (1-dx)*(1-dy);
+        float tr_weight = dx*(1-dy);
+        float bl_weight = (1-dx)*dy;
+        float br_weight = dx*dy;
+
+        u_vel = (tl_u*tl_weight + tr_u*tr_weight + bl_u*bl_weight + br_u*br_weight);
+        v_vel = (tl_v*tl_weight + tr_v*tr_weight + bl_v*bl_weight + br_v*br_weight);
+
+        return{u_vel, v_vel};
 
 }
 
