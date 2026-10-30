@@ -3,6 +3,7 @@
 #include <cstddef>
 #include "vehicle/environment.hpp"
 #include "vehicle/vehicleTypes.hpp"
+#include "vehicle/ProbabilityMap.hpp"
 
 
 class vehicleBatch
@@ -25,6 +26,8 @@ public:
     void set(std::size_t i, const VehicleState& state);
     
     std::size_t getSize() const;
+
+    bool scan(VehicleState& vs, ProbabilityMap& p_map, DriftItem& target);
 
 };
 

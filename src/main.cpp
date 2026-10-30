@@ -104,6 +104,8 @@ int main(int argNum, char* argVals[]){
     std::size_t particle_count = 1000;
     std::size_t cell_size = 50;
     ProbabilityMap p_map(driftDynamics, width, height, particle_count, target.x, target.y, prob_rad, cell_size);
+        //compute probability to generate target cell
+    p_map.computeProb();
 
 
     //allocating variables outside hot loop
@@ -148,8 +150,11 @@ int main(int argNum, char* argVals[]){
                 //calculate new state
                 newState = dynamics.step_update(vs, action, env, dt, curr_step);
 
+                //scan for goal/kill particles
+                vehicles.scan(newState, p_map, target);
                 //update old state
                 vehicles.set(x, newState);
+
 
     
             }

@@ -14,7 +14,8 @@ DD_(DD),
 rng_(25),
 p_rad_(p_rad),
 origin_x_(est_x),
-origin_y_(est_y)
+origin_y_(est_y),
+target_cell(0)
 {
    
 
@@ -41,6 +42,20 @@ void ProbabilityMap::update(const environment& env, float dt){
     }
 
 
+};
+void ProbabilityMap::updateGoal(VehicleState& vs){
+    std::size_t cols = width_ / cell_size_;
+
+    std::size_t col = target_cell % cols;
+    std::size_t row = target_cell / cols;
+
+    // Centre of the selected cell.
+    vs.goalx = (static_cast<float>(col) + 0.5f) * cell_size_;
+    vs.goaly = height_ - (static_cast<float>(row) + 0.5f) * cell_size_;
+
+    std::cout << "updating goal to cell: " << target_cell
+              << " at x, y = " << vs.goalx << ", " << vs.goaly
+              << '\n';
 };
 
 void ProbabilityMap::add_Particles(){
@@ -87,13 +102,20 @@ void ProbabilityMap::computeProb(){
             std::size_t cell_row = std::floor(particles_[i].pos.y / cell_size_);
             std::size_t cell_col = std::floor(particles_[i].pos.x / cell_size_);
 
-            std::size_t index = cell_row * cols + cell_col;
+            std::size_t cell_index = cell_row * cols + cell_col;
 
-            if(map_[index] == 0.f){
-                occupied_cells.push_back(index);
+            //add new cell to occupied cells list
+            if(map_[cell_index] == 0.f){
+                occupied_cells.push_back(cell_index);
             }
 
-            map_[index] += 1.0f; 
+            //add particle to cell map
+            map_[cell_index] += 1.0f; 
+                //change target cell if new update pushes cell to high probability than old target cell
+                if(map_[cell_index] > map_[target_cell]){
+                    target_cell = cell_index;
+                }
+                //std::cout << "target cell is: " << target_cell << std::endl;
 
         }
     }

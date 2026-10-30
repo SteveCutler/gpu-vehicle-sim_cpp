@@ -73,11 +73,46 @@ void vehicleBatch::set(std::size_t i, const VehicleState& newState){
     m_vy[i] = newState.vy;
     m_heading[i] = newState.heading;
     m_turnRate[i] = newState.turnRate;
+    m_goalx[i] = newState.goalx;
+    m_goaly[i] = newState.goaly;
 };
 
 std::size_t vehicleBatch::getSize() const{
     return m_size;
 };
+
+bool vehicleBatch::scan(VehicleState& vs, ProbabilityMap& p_map, DriftItem& target){
+
+    //check if target in censor
+    float td_x = target.x - vs.x;
+    float td_y = target.y - (p_map.height_ - vs.y);
+    float target_dist = std::sqrt(td_x*td_x + td_y*td_y);
+
+    //check if goal in censor
+    float tg_x = vs.goalx - vs.x;
+    float tg_y = (p_map.height_ - vs.goaly) - (p_map.height_ - vs.y);
+    float goal_dist = std::sqrt(tg_x*tg_x + tg_y*tg_y);
+
+
+    if(target_dist <= vs.sensor_rad*2){
+        return true;
+    }
+
+    if(goal_dist < vs.sensor_rad*2){
+
+        p_map.updateGoal(vs);
+        
+    }
+
+
+    //check which cells the sensor is intersecting
+
+    //check the particles in those cells to see if they're in the sensor radius, kill off and recalculate probability
+    return false;
+
+    
+
+}
 
 /*
 TO DO

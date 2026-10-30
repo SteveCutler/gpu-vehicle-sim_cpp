@@ -4,19 +4,21 @@
 #include "vehicle/DriftItem.hpp"
 #include "vehicle/environment.hpp"
 #include "vehicle/DriftDynamics.hpp"
+#include "vehicle/vehicleTypes.hpp"
 
 class ProbabilityMap
 {
 private:
+DriftDynamics DD_;
+std::mt19937 rng_;
+float p_rad_;
+float origin_x_;
+float origin_y_;
+
+public:
     std::size_t width_;
     std::size_t height_;
-    DriftDynamics DD_;
-    std::mt19937 rng_;
-    float p_rad_;
-    float origin_x_;
-    float origin_y_;
-    
-    public:
+    std::size_t target_cell;
     std::vector<PredictionParticle> particles_;
     std::size_t cell_size_;
     std::vector<float> map_;
@@ -31,6 +33,8 @@ public:
     void add_Particles();
 
     void computeProb();
+
+    void updateGoal(VehicleState& vs);
 
     ~ProbabilityMap() = default;
 };

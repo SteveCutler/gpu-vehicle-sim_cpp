@@ -77,7 +77,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     vehicleShape.setFillColor(sf::Color::Cyan);
 
 
-    //create goal shape
+    //create particle shape
     sf::CircleShape particleShape(1.f);
     particleShape.setOrigin({4.f, 4.f});
     particleShape.setFillColor(sf::Color::Green);
@@ -95,6 +95,12 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     targetShape.setPoint(8, {-4.76f, -1.55f});
     targetShape.setPoint(9, {-1.18f, -1.62f});
     targetShape.setFillColor(sf::Color::Red);
+
+    //create goal Shape
+    sf::ConvexShape goalShape(10);
+    goalShape = targetShape;
+    goalShape.setFillColor(sf::Color::Blue);
+
 
     //clear previous frame    
     m_window.clear(sf::Color::Black);
@@ -193,9 +199,14 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         
         m_window.draw(vehicleShape);
 
+        //set and draw goal shape
+        goalShape.setPosition({s.goalx, m_height - s.goaly});
+        m_window.draw(goalShape);
+
             //create sensor shape
         sf::CircleShape sensorShape(s.sensor_rad);
-        sensorShape.setOrigin({10.f, 10.f});
+        sensorShape.setOrigin({s.sensor_rad, s.sensor_rad});
+        sensorShape.setScale({.5f,.5f});
         sensorShape.setFillColor(sf::Color::Transparent);
         sensorShape.setOutlineThickness(0.6f);
         sensorShape.setOutlineColor(sf::Color::White);

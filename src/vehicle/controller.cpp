@@ -17,9 +17,9 @@ Action Controller::steer_controller(const VehicleState& vs){
     const float headingError = std::remainder(desiredHeading - vs.heading, 2.0f * pi);
 
     //PD controls
-    constexpr float kp = 4.f;
+    constexpr float kp = 10.f;
     constexpr float kd = 2.f;
-    constexpr float maxTorque = 4.f;
+    constexpr float maxTorque = 10.f;
 
     Action action{};
     action.torque = std::clamp(
