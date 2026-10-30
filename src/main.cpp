@@ -152,7 +152,8 @@ int main(int argNum, char* argVals[]){
 
                 //scan for goal/kill particles
                 if(vehicles.scan(newState, p_map, target)){
-                    curr_step = 1000000;
+                    curr_step = -10;
+                    break;
                 };
                 //update old state
                 vehicles.set(x, newState);

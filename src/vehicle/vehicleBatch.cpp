@@ -85,7 +85,7 @@ bool vehicleBatch::scan(VehicleState& vs, ProbabilityMap& p_map, DriftItem& targ
 
     //check if target in censor
     float td_x = target.x - vs.x;
-    float td_y = (p_map.height_ - target.y) - (p_map.height_ - vs.y);
+    float td_y = (target.y) - (p_map.height_ - vs.y);
     float target_dist = std::sqrt(td_x*td_x + td_y*td_y);
 
     //check if goal in censor
@@ -108,8 +108,6 @@ bool vehicleBatch::scan(VehicleState& vs, ProbabilityMap& p_map, DriftItem& targ
     p_map.particleScan(vs);
 
     return false;
-
-    
 
 }
 

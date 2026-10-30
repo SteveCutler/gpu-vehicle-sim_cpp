@@ -175,7 +175,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         
     }
     //draw probability map
-    m_window.draw(m_p_grid);
+    //m_window.draw(m_p_grid);
     
     
     //render arrows
