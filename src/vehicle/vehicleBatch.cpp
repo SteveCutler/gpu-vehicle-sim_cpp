@@ -85,7 +85,7 @@ bool vehicleBatch::scan(VehicleState& vs, ProbabilityMap& p_map, DriftItem& targ
 
     //check if target in censor
     float td_x = target.x - vs.x;
-    float td_y = target.y - (p_map.height_ - vs.y);
+    float td_y = (p_map.height_ - target.y) - (p_map.height_ - vs.y);
     float target_dist = std::sqrt(td_x*td_x + td_y*td_y);
 
     //check if goal in censor
@@ -95,6 +95,7 @@ bool vehicleBatch::scan(VehicleState& vs, ProbabilityMap& p_map, DriftItem& targ
 
 
     if(target_dist <= vs.sensor_rad*2){
+        std::cout << "Found target!" << std::endl;
         return true;
     }
 
@@ -104,10 +105,8 @@ bool vehicleBatch::scan(VehicleState& vs, ProbabilityMap& p_map, DriftItem& targ
         
     }
 
+    p_map.particleScan(vs);
 
-    //check which cells the sensor is intersecting
-
-    //check the particles in those cells to see if they're in the sensor radius, kill off and recalculate probability
     return false;
 
     

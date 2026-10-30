@@ -151,7 +151,9 @@ int main(int argNum, char* argVals[]){
                 newState = dynamics.step_update(vs, action, env, dt, curr_step);
 
                 //scan for goal/kill particles
-                vehicles.scan(newState, p_map, target);
+                if(vehicles.scan(newState, p_map, target)){
+                    curr_step = 1000000;
+                };
                 //update old state
                 vehicles.set(x, newState);
 

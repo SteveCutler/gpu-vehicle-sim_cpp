@@ -36,6 +36,8 @@ public:
 
     void updateGoal(VehicleState& vs);
 
+    void particleScan(VehicleState& vs);
+
     ~ProbabilityMap() = default;
 };
 

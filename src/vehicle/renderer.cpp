@@ -159,7 +159,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
             //cell with particles in it
             std::size_t cell_num = p_map.occupied_cells[i];
             
-            float intensity = (p_map.map_[cell_num]/p_map.num_p_) * 255.0;
+            float intensity = (p_map.map_[cell_num]/p_map.particles_.size()) * 255.0;
             
             std::size_t start_vert = cell_num * 6;
             
