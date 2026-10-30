@@ -5,6 +5,7 @@ struct VehicleState{
     float vx, vy;
     float heading, turnRate;
     float goalx, goaly;
+    float sensor_rad;
 };
 
 struct Action{

@@ -66,7 +66,7 @@ int main(int argNum, char* argVals[]){
     }
 
     //Vehicles
-    std::size_t N = 0;
+    std::size_t N = 1;
     //Steps
     std::size_t steps = -1;
 
@@ -101,8 +101,8 @@ int main(int argNum, char* argVals[]){
 
     //init Probability Map
     float prob_rad = 25.f;
-    std::size_t particle_count = 5;
-    std::size_t cell_size = 10;
+    std::size_t particle_count = 1000;
+    std::size_t cell_size = 50;
     ProbabilityMap p_map(driftDynamics, width, height, particle_count, target.x, target.y, prob_rad, cell_size);
 
 
@@ -131,7 +131,7 @@ int main(int argNum, char* argVals[]){
 
             //FLUID UPDATE
 
-            env.update_fluid(dt);
+            
 
 
             //VEHICLE UPDATE
@@ -162,6 +162,8 @@ int main(int argNum, char* argVals[]){
 
             //compute probability
             p_map.computeProb();
+
+            env.update_fluid(dt);
 
         //optionally display data
         #ifdef ENABLE_RENDERER

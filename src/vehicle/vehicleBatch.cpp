@@ -11,7 +11,8 @@ vehicleBatch::vehicleBatch(std::size_t N, environment env):
     m_turnRate(N),
     m_goalx(N),
     m_goaly(N),
-    m_size(N)
+    m_size(N),
+    m_sensor_rad(N)
 {
 
     //RNG setup 
@@ -30,7 +31,7 @@ vehicleBatch::vehicleBatch(std::size_t N, environment env):
 
 
     for(int x = 0; x < N; x++){
-        //intializing a single vehicle with basic parameters for verification
+      //initializing vehicles
         m_x[x] = randomX(rng);
         m_y[x] = randomY(rng);
 
@@ -42,6 +43,8 @@ vehicleBatch::vehicleBatch(std::size_t N, environment env):
 
         m_goalx[x] = randomX(rng);
         m_goaly[x] = randomY(rng);
+        
+        m_sensor_rad[x] = 10.f;
         
     }
 
@@ -57,7 +60,8 @@ VehicleState vehicleBatch::load(std::size_t i) const{
         m_heading[i], 
         m_turnRate[i],
         m_goalx[i],
-        m_goaly[i]
+        m_goaly[i],
+        m_sensor_rad[i]
     };
 
 };

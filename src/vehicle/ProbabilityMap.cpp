@@ -18,19 +18,28 @@ origin_y_(est_y)
 {
    
 
-//add_Particles();
+add_Particles();
 
 
 };
 
 void ProbabilityMap::update(const environment& env, float dt){
 
-    add_Particles();
+   // add_Particles();
 
     //update probability particle drift
-    for(auto& p : particles_){
-        DD_.DriftUpdate(p.pos, env.getDisturbance(p.pos.x, p.pos.y, 0.f), dt);
+
+    //scan for dead particles, if alive update dynamics
+    for(auto it = particles_.begin(); it != particles_.end();){
+        it->life_ -= dt;
+        if( it->life_ <0.f){
+            it = particles_.erase(it);
+        }else{
+             DD_.DriftUpdate(it->pos, env.getDisturbance(it->pos.x, it->pos.y, 0.f), dt);
+        }
+        it++;
     }
+
 
 };
 
@@ -46,13 +55,14 @@ void ProbabilityMap::add_Particles(){
 
     std::uniform_real_distribution<float> randomX(min_x + margin, max_x - margin);
     std::uniform_real_distribution<float> randomY(min_y + margin, max_y - margin);
+    std::uniform_real_distribution<float> randomLife(50.f, 100.f);
 
     float x;
     float y;
 
     for(size_t i = 0; i < num_p_; i++){
         particles_.push_back( 
-            PredictionParticle(randomX(rng_), randomY(rng_)) 
+            PredictionParticle(randomX(rng_), randomY(rng_), randomLife(rng_)) 
         );
     };
 }
@@ -83,7 +93,8 @@ void ProbabilityMap::computeProb(){
                 occupied_cells.push_back(index);
             }
 
-            map_[index] += 1.0f / static_cast<float>(150); 
+            map_[index] += 1.0f; 
+
         }
     }
 };

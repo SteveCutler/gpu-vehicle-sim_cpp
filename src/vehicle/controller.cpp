@@ -30,8 +30,8 @@ Action Controller::steer_controller(const VehicleState& vs){
     //create dynamic thrust
     constexpr float distGain = 5.f;
     constexpr float speedGain = 20.0f;
-    constexpr float maxSpeed = 30.f;
-    constexpr float maxThrust = 20.f;
+    constexpr float maxSpeed = 20.f;
+    constexpr float maxThrust = 15.f;
 
     float distx = vs.x - vs.goalx;
     float disty = vs.y - vs.goaly;

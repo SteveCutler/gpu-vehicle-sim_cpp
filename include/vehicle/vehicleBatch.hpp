@@ -14,6 +14,7 @@ private:
     std::vector<float> m_heading, m_turnRate;
     std::vector<float> m_goalx, m_goaly;
     std::size_t m_size;
+    std::vector<float> m_sensor_rad;
 
 
 public:

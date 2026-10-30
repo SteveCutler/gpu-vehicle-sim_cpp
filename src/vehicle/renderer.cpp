@@ -70,10 +70,12 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
 
     //create vehicle shape
     sf::ConvexShape vehicleShape(3);
+    vehicleShape.setOrigin({0.f, 0.f});
     vehicleShape.setPoint(0, {10.f, 0.f});   
     vehicleShape.setPoint(1, {-7.f, -6.f});
     vehicleShape.setPoint(2, {-7.f,  6.f});
     vehicleShape.setFillColor(sf::Color::Cyan);
+
 
     //create goal shape
     sf::CircleShape particleShape(1.f);
@@ -139,15 +141,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     m_fluid_texture.update(pixels.data());
     m_window.draw(m_sprite);
 
-    // Load and render vehicle data
-    for(int i = 0; i<count; i++){
-        VehicleState s = vehicles.load(i);
 
-        vehicleShape.setPosition({s.x, m_height - s.y});
-        vehicleShape.setRotation(sf::radians(-s.heading));
-        m_window.draw(vehicleShape);
-    }
-    
     //clear probability grid to black
     for(std::size_t i = 0; i < m_p_grid.getVertexCount(); i++){
         m_p_grid[i].color = sf::Color::Black;
@@ -159,7 +153,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
             //cell with particles in it
             std::size_t cell_num = p_map.occupied_cells[i];
             
-            float intensity = (p_map.map_[cell_num] * 255.0);
+            float intensity = (p_map.map_[cell_num]/p_map.num_p_) * 255.0;
             
             std::size_t start_vert = cell_num * 6;
             
@@ -175,7 +169,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         
     }
     //draw probability map
-    //m_window.draw(m_p_grid);
+    m_window.draw(m_p_grid);
     
     
     //render arrows
@@ -183,13 +177,35 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         m_window.draw(m_arrows);
     }
 
-    
-
     //drawing probability particles
     for(size_t p = 0; p < p_map.particles_.size(); p++){
         particleShape.setPosition({p_map.particles_[p].pos.x, p_map.particles_[p].pos.y});
         m_window.draw(particleShape);
     }
+
+        // Load and render vehicle data
+    for(int i = 0; i<count; i++){
+        VehicleState s = vehicles.load(i);
+
+        vehicleShape.setPosition({s.x, m_height - s.y});
+        vehicleShape.setRotation(sf::radians(-s.heading));
+        vehicleShape.setScale(sf::Vector2f(0.7f,0.7f));
+        
+        m_window.draw(vehicleShape);
+
+            //create sensor shape
+        sf::CircleShape sensorShape(s.sensor_rad);
+        sensorShape.setOrigin({10.f, 10.f});
+        sensorShape.setFillColor(sf::Color::Transparent);
+        sensorShape.setOutlineThickness(0.6f);
+        sensorShape.setOutlineColor(sf::Color::White);
+
+        
+        sensorShape.setPosition({s.x, m_height - s.y});
+        sensorShape.setScale(sf::Vector2f(2.5f,2.5f));
+        m_window.draw(sensorShape);
+    }
+    
     
     //draw target
     targetShape.setPosition({target.x,target.y});
