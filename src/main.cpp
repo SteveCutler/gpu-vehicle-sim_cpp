@@ -37,7 +37,7 @@ int main(int argNum, char* argVals[]){
     constexpr std::size_t width = 500;
     constexpr std::size_t height = 500;
     constexpr float dt = 0.02f;
-    constexpr bool arrow_viz = true;
+    constexpr bool arrow_viz = false;
     constexpr std::size_t seed = 42;
 
      ////////////
@@ -68,7 +68,7 @@ int main(int argNum, char* argVals[]){
     //Vehicles
     std::size_t N = 0;
     //Steps
-    std::size_t steps = 1000;
+    std::size_t steps = -1;
 
     //take in input variables
     //set vehicle batch size

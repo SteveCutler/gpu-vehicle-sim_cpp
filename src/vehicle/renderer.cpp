@@ -159,7 +159,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
             //cell with particles in it
             std::size_t cell_num = p_map.occupied_cells[i];
             
-            float intensity = p_map.map_[cell_num] * 255.0;
+            float intensity = (p_map.map_[cell_num] * 255.0);
             
             std::size_t start_vert = cell_num * 6;
             
@@ -175,7 +175,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         
     }
     //draw probability map
-    m_window.draw(m_p_grid);
+    //m_window.draw(m_p_grid);
     
     
     //render arrows
@@ -186,10 +186,10 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     
 
     //drawing probability particles
-    // for(size_t p = 0; p < p_map.particles_.size(); p++){
-    //     particleShape.setPosition({p_map.particles_[p].pos.x, p_map.particles_[p].pos.y});
-    //     m_window.draw(particleShape);
-    // }
+    for(size_t p = 0; p < p_map.particles_.size(); p++){
+        particleShape.setPosition({p_map.particles_[p].pos.x, p_map.particles_[p].pos.y});
+        m_window.draw(particleShape);
+    }
     
     //draw target
     targetShape.setPosition({target.x,target.y});

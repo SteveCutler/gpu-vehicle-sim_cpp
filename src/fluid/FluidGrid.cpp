@@ -745,11 +745,17 @@ void FluidGrid::gen_pixels_Rows(std::size_t begin, std::size_t end){
 
             for( std::size_t x=0; x<m_width; x++){
                 std::size_t i = row+x;
+
+                auto [u,v] = vel_sample(x,y);
+                float speed = std::hypot(u,v);
+                float white_level = 50.0;
+                float current = std::clamp(speed/white_level, 0.f, 1.f);
+
                 
                 //clamp between 0 and 1
-                float d_r = m_density_r[i];
-                float d_g = m_density_g[i];
-                float d_b = m_density_b[i];
+                float d_r = 0.1f + current * 0.9f;
+                float d_g = 0.45f + current * 0.55f;
+                float d_b = 0.9f + current * 0.1f;
                 
                 
                 //convert density to RGB values
