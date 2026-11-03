@@ -118,6 +118,8 @@ int main(int argNum, char* argVals[]){
     // create a clock to track the elapsed time
     // TO DO create performance clock
 
+    bool target_found = false;
+
     //if rendering enabled create rendering logic
     #ifdef ENABLE_RENDERER
         //create renderer
@@ -132,6 +134,8 @@ int main(int argNum, char* argVals[]){
         while(curr_step < steps){
 
             //FLUID UPDATE
+
+            if(target_found){break;}
 
             
 
@@ -151,10 +155,10 @@ int main(int argNum, char* argVals[]){
                 newState = dynamics.step_update(vs, action, env, dt, curr_step);
 
                 //scan for goal/kill particles
-                if(vehicles.scan(newState, p_map, target)){
-                    curr_step = -10;
-                    break;
-                };
+                target_found = vehicles.scan(newState, p_map, target);
+
+                if(target_found){break;}
+                
                 //update old state
                 vehicles.set(x, newState);
 
