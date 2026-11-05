@@ -34,6 +34,7 @@ add_executable(vehicle_sim
     src/vehicle/controller.cpp
     src/vehicle/DriftDynamics.cpp
     src/vehicle/ProbabilityMap.cpp
+    src/vehicle/SearchPlanner.cpp
 )
 
 target_link_libraries(vehicle_sim PRIVATE fluid_core)

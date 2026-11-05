@@ -52,11 +52,21 @@ void ProbabilityMap::updateGoal(VehicleState& vs){
     // Centre of the selected cell.
     vs.goalx = (static_cast<float>(col) + 0.5f) * cell_size_;
     vs.goaly = height_ - (static_cast<float>(row) + 0.5f) * cell_size_;
-
-    std::cout << "updating goal to cell: " << target_cell
-              << " at x, y = " << vs.goalx << ", " << vs.goaly
-              << '\n';
+    return;
 };
+
+
+std::pair<float,float> ProbabilityMap::convertCell(std::size_t cell){
+        std::size_t cols = width_ / cell_size_;
+
+    std::size_t col = cell % cols;
+    std::size_t row = cell / cols;
+    float cellx = (static_cast<float>(col) + 0.5f) * cell_size_;
+    float celly = height_ - (static_cast<float>(row) + 0.5f) * cell_size_;
+
+    return {cellx, celly};
+
+}
 
 void ProbabilityMap::particleScan(VehicleState& vs){
 

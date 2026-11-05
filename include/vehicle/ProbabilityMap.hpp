@@ -34,6 +34,8 @@ public:
 
     void computeProb();
 
+    std::pair<float,float> convertCell(std::size_t cell);
+
     void updateGoal(VehicleState& vs);
 
     void particleScan(VehicleState& vs);

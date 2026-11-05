@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/vehicle_sim.dir/src/vehicle/DriftDynamics.cpp.o.d"
   "CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o"
   "CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.o.d"
+  "CMakeFiles/vehicle_sim.dir/src/vehicle/SearchPlanner.cpp.o"
+  "CMakeFiles/vehicle_sim.dir/src/vehicle/SearchPlanner.cpp.o.d"
   "CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o"
   "CMakeFiles/vehicle_sim.dir/src/vehicle/controller.cpp.o.d"
   "CMakeFiles/vehicle_sim.dir/src/vehicle/dynamics.cpp.o"

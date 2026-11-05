@@ -286,6 +286,30 @@ src/vehicle/ProbabilityMap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/ProbabilityMap.cpp.s
 .PHONY : src/vehicle/ProbabilityMap.cpp.s
 
+src/vehicle/SearchPlanner.o: src/vehicle/SearchPlanner.cpp.o
+.PHONY : src/vehicle/SearchPlanner.o
+
+# target to build an object file
+src/vehicle/SearchPlanner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/SearchPlanner.cpp.o
+.PHONY : src/vehicle/SearchPlanner.cpp.o
+
+src/vehicle/SearchPlanner.i: src/vehicle/SearchPlanner.cpp.i
+.PHONY : src/vehicle/SearchPlanner.i
+
+# target to preprocess a source file
+src/vehicle/SearchPlanner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/SearchPlanner.cpp.i
+.PHONY : src/vehicle/SearchPlanner.cpp.i
+
+src/vehicle/SearchPlanner.s: src/vehicle/SearchPlanner.cpp.s
+.PHONY : src/vehicle/SearchPlanner.s
+
+# target to generate assembly for a file
+src/vehicle/SearchPlanner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vehicle_sim.dir/build.make CMakeFiles/vehicle_sim.dir/src/vehicle/SearchPlanner.cpp.s
+.PHONY : src/vehicle/SearchPlanner.cpp.s
+
 src/vehicle/controller.o: src/vehicle/controller.cpp.o
 .PHONY : src/vehicle/controller.o
 
@@ -434,6 +458,9 @@ help:
 	@echo "... src/vehicle/ProbabilityMap.o"
 	@echo "... src/vehicle/ProbabilityMap.i"
 	@echo "... src/vehicle/ProbabilityMap.s"
+	@echo "... src/vehicle/SearchPlanner.o"
+	@echo "... src/vehicle/SearchPlanner.i"
+	@echo "... src/vehicle/SearchPlanner.s"
 	@echo "... src/vehicle/controller.o"
 	@echo "... src/vehicle/controller.i"
 	@echo "... src/vehicle/controller.s"

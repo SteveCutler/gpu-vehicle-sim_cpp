@@ -999,5 +999,6 @@ CMakeFiles/vehicle_sim.dir/src/main.cpp.o: \
   /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/vehicle/dynamics.hpp \
   /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/vehicle/stateExport.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
+  /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/vehicle/SearchPlanner.hpp \
   /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/fluid/Slider.hpp \
   /Users/stevecutler/Documents/UVIC/Classes/GPUcomputing/Implementation_phase1/CPP/include/vehicle/renderer.hpp

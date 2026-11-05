@@ -10,6 +10,7 @@
 #include "vehicle/DriftItem.hpp"
 #include "vehicle/DriftDynamics.hpp"
 #include "vehicle/ProbabilityMap.hpp"
+#include "vehicle/SearchPlanner.hpp"
 
 //Fluid Include
 #include <iostream>
@@ -103,7 +104,10 @@ int main(int argNum, char* argVals[]){
     float prob_rad = 25.f;
     std::size_t particle_count = 1000;
     std::size_t cell_size = 50;
+
     ProbabilityMap p_map(driftDynamics, width, height, particle_count, target.x, target.y, prob_rad, cell_size);
+    //used for calculating future waypoints
+    ProbabilityMap tempMap(driftDynamics, width, height, particle_count, target.x, target.y, prob_rad, cell_size);
         //compute probability to generate target cell
     p_map.computeProb();
 
@@ -112,6 +116,8 @@ int main(int argNum, char* argVals[]){
     VehicleState vs;
     Action action;
     VehicleState newState;
+    //init planner, horizon of 50 steps
+    SearchPlanner planner(50);
 
    
 
@@ -158,12 +164,31 @@ int main(int argNum, char* argVals[]){
                 target_found = vehicles.scan(newState, p_map, target);
 
                 if(target_found){break;}
+
+                //run planner every 50 steps
+                if(curr_step % 50 == 0 && curr_step != 0){
+                    //choose waypoint based on particle drift predictions
+                    
+                    std::pair<float,float> newWP = planner.chooseWaypoint(vs, 
+                        p_map.particles_, 
+                        env, 
+                        dt, 
+                        tempMap,
+                        dynamics,
+                        controller,
+                        height);
+                    //update waypoint
+                    newState.goalx = newWP.first;
+                    newState.goaly = newWP.second;
+
+                    std::cout << "Updating WP to: {" << newState.goalx << ", " << newState.goaly << "}" << std::endl;
+
+                    
+                }
                 
                 //update old state
                 vehicles.set(x, newState);
 
-
-    
             }
 
             //update target location
