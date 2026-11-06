@@ -5,6 +5,7 @@
 #include <thread>
 #include <algorithm>
 #include <cmath>
+#include <SFML/System/Time.hpp>
 
 
 FluidGrid::FluidGrid(std::size_t width, std::size_t height, std::vector<Emitter*> emitters, int seed, bool threaded):
@@ -213,7 +214,9 @@ void FluidGrid::update(float dt){
     m_advect_ms = m_performance_clock.restart().asMicroseconds()/1000.f;
 
     //generate pixels
+    #ifdef ENABLE_RENDERER
     m_mult_threaded ? gen_pixels_Threaded() : gen_pixels_Rows(0, m_height);
+    #endif
     
 }
     

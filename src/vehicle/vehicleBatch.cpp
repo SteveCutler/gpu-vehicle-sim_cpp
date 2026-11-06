@@ -99,11 +99,12 @@ bool vehicleBatch::scan(VehicleState& vs, ProbabilityMap& p_map, DriftItem& targ
         return true;
     }
 
-    if(goal_dist < vs.sensor_rad*2){
+    //removing function to update waypoint
+    // if(goal_dist < vs.sensor_rad*2){
 
-        p_map.updateGoal(vs);
+    //     p_map.updateGoal(vs);
         
-    }
+    // }
 
     p_map.particleScan(vs);
 

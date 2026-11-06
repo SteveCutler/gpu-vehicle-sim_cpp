@@ -3,6 +3,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <algorithm>
 #include "vehicle/environment.hpp"
 #include "vehicle/DriftItem.hpp"
 #include "vehicle/ProbabilityMap.hpp"
@@ -150,7 +151,7 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
 
     //clear probability grid to black
     for(std::size_t i = 0; i < m_p_grid.getVertexCount(); i++){
-        m_p_grid[i].color = sf::Color::Black;
+        m_p_grid[i].color = sf::Color::Transparent;
     }
 
     
@@ -158,24 +159,25 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
         for(std::size_t i = 0; i < p_map.occupied_cells.size(); i++){
             //cell with particles in it
             std::size_t cell_num = p_map.occupied_cells[i];
-            
             float intensity = (p_map.map_[cell_num]/p_map.particles_.size()) * 255.0;
+            const float fraction = p_map.map_[cell_num] / p_map.particles_.size();
+            const auto alpha = static_cast<std::uint8_t>(255.f * fraction);
             
             std::size_t start_vert = cell_num * 6;
             
-            m_p_grid[start_vert + 0].color = sf::Color(0, intensity, 0);
-            m_p_grid[start_vert + 1].color = sf::Color(0, intensity, 0);
-            m_p_grid[start_vert + 2].color = sf::Color(0, intensity, 0);
+            m_p_grid[start_vert + 0].color = sf::Color(0, 255, 0, alpha);
+            m_p_grid[start_vert + 1].color = sf::Color(0, 255, 0, alpha);
+            m_p_grid[start_vert + 2].color = sf::Color(0, 255, 0, alpha);
             
             // Second triangle
-            m_p_grid[start_vert + 3].color = sf::Color(0, intensity, 0);
-            m_p_grid[start_vert + 4].color = sf::Color(0, intensity, 0);
-            m_p_grid[start_vert + 5].color = sf::Color(0, intensity, 0);
+            m_p_grid[start_vert + 3].color = sf::Color(0, 255, 0, alpha);
+            m_p_grid[start_vert + 4].color = sf::Color(0, 255, 0, alpha);
+            m_p_grid[start_vert + 5].color = sf::Color(0, 255, 0, alpha);
         }
         
     }
     //draw probability map
-    //m_window.draw(m_p_grid);
+    m_window.draw(m_p_grid);
     
     
     //render arrows
@@ -184,10 +186,10 @@ bool Renderer::draw(const vehicleBatch& vehicles, float dt, std::size_t curr_ste
     }
 
     //drawing probability particles
-    for(size_t p = 0; p < p_map.particles_.size(); p++){
-        particleShape.setPosition({p_map.particles_[p].pos.x, p_map.particles_[p].pos.y});
-        m_window.draw(particleShape);
-    }
+    // for(size_t p = 0; p < p_map.particles_.size(); p++){
+    //     particleShape.setPosition({p_map.particles_[p].pos.x, p_map.particles_[p].pos.y});
+    //     m_window.draw(particleShape);
+    // }
 
         // Load and render vehicle data
     for(int i = 0; i<count; i++){

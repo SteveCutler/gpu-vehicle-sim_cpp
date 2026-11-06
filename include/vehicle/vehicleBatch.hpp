@@ -13,12 +13,13 @@ private:
     std::vector<float> m_x, m_y;
     std::vector<float> m_vx, m_vy;
     std::vector<float> m_heading, m_turnRate;
-    std::vector<float> m_goalx, m_goaly;
     std::size_t m_size;
     std::vector<float> m_sensor_rad;
-
-
-public:
+    
+    
+    public:
+    std::vector<float> m_goalx, m_goaly;
+    
     vehicleBatch(std::size_t N, environment env);
 
     VehicleState load(std::size_t i) const;

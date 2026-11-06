@@ -181,7 +181,7 @@ int main(int argNum, char* argVals[]){
                     newState.goalx = newWP.first;
                     newState.goaly = newWP.second;
 
-                    std::cout << "Updating WP to: {" << newState.goalx << ", " << newState.goaly << "}" << std::endl;
+                   // std::cout << "Updating WP to: {" << newState.goalx << ", " << newState.goaly << "}" << std::endl;
 
                     
                 }

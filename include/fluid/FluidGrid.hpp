@@ -2,11 +2,15 @@
 
 #include <cstddef>
 #include <vector>
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
 #include "../include/fluid/FastNoiseLite.h"
 #include "../include/fluid/Emitter.hpp"
 #include <thread>
+#include <SFML/System/Clock.hpp>
+
+#ifdef ENABLE_RENDERER
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#endif
 
 //Divergence measurement test struct
 struct DivergenceStats {

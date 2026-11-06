@@ -11,10 +11,12 @@ add_library(fluid_core STATIC
     src/fluid/Emitter.cpp
 )
 
-target_link_libraries(fluid_core PRIVATE
+target_link_libraries(fluid_core 
+PUBLIC
+SFML::System
+PRIVATE
     SFML::Graphics
     SFML::Window
-    SFML::System
 )
 
 
@@ -44,7 +46,7 @@ if(ENABLE_RENDERER)
 
     target_sources(vehicle_sim PRIVATE
         src/vehicle/renderer.cpp
-  
+        src/fluid/FluidGrid.cpp
         src/fluid/Slider.cpp
     )
 
