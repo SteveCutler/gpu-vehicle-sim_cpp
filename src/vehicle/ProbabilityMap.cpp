@@ -37,8 +37,8 @@ void ProbabilityMap::update(const environment& env, float dt){
             it = particles_.erase(it);
         }else{
              DD_.DriftUpdate(it->pos, env.getDisturbance(it->pos.x, it->pos.y, 0.f), dt);
+             it++;
         }
-        it++;
     }
 
 
@@ -80,8 +80,10 @@ void ProbabilityMap::particleScan(VehicleState& vs){
         
         if(x_dist*x_dist + y_dist*y_dist < (vs.sensor_rad*2)*(2* vs.sensor_rad)){
             it = particles_.erase(it);
+        }else{
+
+            it++;
         }
-        it++;
     }
     //std::cout << "particle scan" << std::endl;
 }

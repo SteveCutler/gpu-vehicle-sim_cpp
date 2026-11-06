@@ -58,13 +58,13 @@ int main(int argNum, char* argVals[]){
     bool threaded = false;
 
     //Font loading
-    sf::Font font;
-    bool loaded = font.openFromFile(FLUID_FONT_PATH);
+    // sf::Font font;
+    // bool loaded = font.openFromFile(FLUID_FONT_PATH);
 
-    if(!loaded){
-        std::cerr << "Failed to load font\n";
-        return EXIT_FAILURE;
-    }
+    // if(!loaded){
+    //     std::cerr << "Failed to load font\n";
+    //     return EXIT_FAILURE;
+    // }
 
     //Vehicles
     std::size_t N = 1;

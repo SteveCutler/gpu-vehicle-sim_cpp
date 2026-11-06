@@ -5,7 +5,7 @@
 #include <algorithm>
 
 SearchPlanner::SearchPlanner(std::size_t horizon):
-horizon_(horizon+1),
+horizon_(horizon),
 w_index_(0)
 {
     // + 1 because the first index is the current position
