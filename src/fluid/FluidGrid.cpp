@@ -11,6 +11,7 @@ FluidGrid::FluidGrid(std::size_t width, std::size_t height, std::vector<Emitter*
 
 m_pixels(width * height * 4, std::uint8_t{0}),
 m_buoyancy(50.f),
+m_drift(30.f),
 m_diff_co(4.5f),
 m_viscosity(0.05f),
 m_decay(0.994f),
@@ -641,6 +642,7 @@ void FluidGrid::advectVel_Rows(float dt, std::size_t begin, std::size_t end){
 
         new_u_vel = (tl_u*tl_weight + tr_u*tr_weight + bl_u*bl_weight + br_u*br_weight) *m_vel_decay;
         new_v_vel = (tl_v*tl_weight + tr_v*tr_weight + bl_v*bl_weight + br_v*br_weight) *m_vel_decay;
+        new_u_vel -= m_drift * density_sample(i) * dt ;
         new_v_vel -= m_buoyancy * density_sample(i) * dt ;
         
         m_u_velocity[i] = new_u_vel;

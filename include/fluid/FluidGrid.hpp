@@ -24,6 +24,7 @@ class FluidGrid
         FluidGrid(std::size_t width, std::size_t height, std::vector<Emitter*> emitters, int seed, bool threaded);
         std::vector<std::uint8_t> m_pixels;
         float m_buoyancy;
+        float m_drift;
         float m_diff_co;
         float m_viscosity;
         float m_decay;
